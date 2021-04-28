@@ -1,7 +1,7 @@
 {
   "name": "framecon2021",
   "version": "1.0.0",
-  "description": "This is a conference management system",
+  "description": "This is the backend of conference management system",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
