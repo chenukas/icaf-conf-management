@@ -1,10 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+const middleware = require("./middleware");
 const connectDatabase = require("./config/database");
+const routes = require("./routes");
 
 const app = express();
 
-app.use(express.json());
+middleware(app);
+routes(app);
 
 const PORT = process.env.PORT || 5000;
 
