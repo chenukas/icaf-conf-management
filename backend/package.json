@@ -4,10 +4,8 @@
   "description": "This is the backend of conference management system",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/index.js",
-    "server": "nodemon backend/index.js",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +26,6 @@
     "mongoose": "^5.12.6"
   },
   "devDependencies": {
-    "concurrently": "^6.0.2",
     "nodemon": "^2.0.7"
   }
 }
