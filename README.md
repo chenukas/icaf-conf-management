@@ -1,11 +1,13 @@
 # frameCon2021
 
-Install dependencies
+> Install dependencies
 
 Frontend - yarn install
 Backend - npm install
+</br>
 
-Start project
+> Start project
 
 Frontend - yarn start
 Backend - npm start
+</br>
