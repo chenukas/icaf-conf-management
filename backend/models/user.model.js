@@ -9,10 +9,6 @@ const jwt = require("jsonwebtoken");
 
 const userSchema = new Schema(
   {
-    userID: {
-        type: String,
-        required: true,
-    },
     userName: {
         type: String,
         required: true,
