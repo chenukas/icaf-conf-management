@@ -1,18 +1,17 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./components/Home/Home.js";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Users from "./components/Dashboard/Users";
 import Navbar from "./components/Home/Navbar/navbar";
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import { withRouter } from "react-router";
 
 function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route exact path="/nav" component={Navbar} />
-        <Route exact path="/admin" component={Dashboard} />
-        <Route path="/admin/users" component={Users} />
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/dashboard" component={withRouter(Dashboard)} />
       </Switch>
     </>
   );

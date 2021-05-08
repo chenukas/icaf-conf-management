@@ -4,9 +4,6 @@ const jwt = require('jsonwebtoken');
 
 const userRegister = (req, res) => {
 
-    console.log("hgjhgj");
-
-    const userID = req.body.userID;
     const userName = req.body.userName;
     const contactNumber = req.body.contactNumber;
     let email = req.body.email;
@@ -14,14 +11,6 @@ const userRegister = (req, res) => {
     const type = req.body.type;
     const password = req.body.password;
 
-    console.log("hgjhgj");
-
-    if (!userID){
-        return res.send({
-            success: false,
-            message: 'User ID can not be blank.'
-        });
-    }
     if (!userName){
         return res.send({
             success: false,
@@ -80,7 +69,6 @@ const userRegister = (req, res) => {
         }
         else{
             const newUser = new User({
-                userID,
                 userName,
                 email,
                 contactNumber,
@@ -119,6 +107,122 @@ const userRegister = (req, res) => {
     });
 };
 
+const getAllUsers = (req, res) => {
+
+    User.find({})
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        data: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: err.message,
+      });
+    });
+};
+
+const deleteUserByID = (req, res) => {
+
+    User.findByIdAndDelete(req.params.id)
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        data: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: err.message,
+      });
+    });
+};
+
+const userDetailsByID = (req, res) => {
+
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+        .catch(err => res.status(400).json('Error: '+err));
+};
+
+const userProfileByEmail = (req, res) => {
+
+    if (!req.body.email) {
+        return res.status(400).json({
+          success: false,
+          message: "Email is undefined",
+        });
+      }
+    
+      let email = req.body.email;
+      email = email.toLowerCase();
+    
+      User.find(
+        {
+          email: email,
+        },
+        (err, users) => {
+          if (err) {
+            console.log("err 2:", err);
+            return res.send({
+              success: false,
+              message: "Error: Server error",
+            });
+          }
+          if (users.length !== 1) {
+            return res.send({
+              success: false,
+              message: "Invalid User Email",
+            });
+          }
+    
+          const user = users[0];
+    
+          User.findById(user._id)
+            .populate("site")
+            .then((result) => {
+              res.status(200).json({
+                success: true,
+                data: result,
+                message: "Searching ID is found.",
+              });
+            });
+        }
+      );
+};
+
+const updatePositionByID = (req, res) => {
+
+    User.findByIdAndUpdate(
+        req.body._id,
+        {
+            position: req.body.position
+        },
+        { new: true }
+      )
+        .then((result) => {
+          res.status(200).json({
+            success: true,
+            data: result,
+          });
+        })
+        .catch((err) => {
+          res.status(503).json({
+            success: false,
+            message: err.message,
+          });
+        });
+
+};
+
 module.exports = {
-    userRegister
+    userRegister,
+    getAllUsers,
+    deleteUserByID,
+    userProfileByEmail,
+    userDetailsByID,
+    updatePositionByID
 };
