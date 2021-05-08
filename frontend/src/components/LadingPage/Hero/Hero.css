@@ -1,0 +1,28 @@
+.heroContainer{
+    background: #0c0c0c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30;
+    height: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+/* .heroBg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} */
+
+.image {
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+}
+
