@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "../../components/LadingPage/Hero/Hero";
 import { Link } from "react-router-dom";
-// import Navbar from "./Navbar/navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
   return (
-    <Link to="/nav">Nav</Link>
+    <Navbar>
+      <Hero/>
+    </Navbar>
   
   );
 };

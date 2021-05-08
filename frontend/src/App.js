@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { withRouter } from "react-router";
+import '@fontsource/roboto';
 
 function App() {
   return (
