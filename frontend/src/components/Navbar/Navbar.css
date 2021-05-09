@@ -83,32 +83,32 @@
 }
 
 .navBtn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-    .navBtn {
-        display: none;
-    }
+  .navBtn {
+    display: none;
+  }
 }
 
 .navBtnLink {
-    border-radius: 50px;
-    background-color: #01bf71;
-    white-space: nowrap;
-    padding: 10px 22px;
-    color: #010606;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    cursor: pointer; 
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
+  border-radius: 50px;
+  background-color: #01bf71;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010606;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .navBtnLink:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: #010606;
 }
