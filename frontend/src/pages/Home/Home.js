@@ -6,8 +6,10 @@ import Navbar from "../../components/Navbar/Navbar";
 const Home = () => {
   return (
     <>
-      <Navbar/>
-      <Hero/>
+      <Navbar />
+      <div className="container">
+        <Hero />
+      </div>
     </>
   );
 };
