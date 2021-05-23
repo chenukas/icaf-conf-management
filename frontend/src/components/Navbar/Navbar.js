@@ -35,7 +35,7 @@ const Navbar = ({ toggle }) => {
             </p>
           </div>
           <div className="navBtn">
-            <p className="navBtnLink" to="">
+            <p className="navBtnLink" to="/signin">
               Sign In
             </p>
           </div>
