@@ -1,89 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import moment from "moment";
 import "./Timeline.css";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { FaClock } from "react-icons/fa";
 
 const Timeline = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: "http://localhost:5000/events",
+    })
+      .then((response) => {
+        setEvents(response.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(events);
+
   return (
     <div className="timeline-container">
+      <h2 className='timeline-header'>Timeline</h2>
       <VerticalTimeline>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2010 - 2011"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">Art Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, SEO, Online
-            Marketing
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2008 - 2010"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Los Angeles, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2006 - 2008"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="April 2013"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Content Marketing for Web, Mobile and Social Media
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-          <p>Strategy, Social Media</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="November 2012"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Agile Development Scrum Master
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-          <p>Creative Direction, User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2002 - 2006"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Bachelor of Science in Interactive Digital Media Visual Imaging
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Bachelor Degree
-          </h4>
-          <p>Creative Direction, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
-        />
+        {events &&
+          events.map((event, key) => (
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              date={moment(event.start).format("MMM Do YY")}
+              icon={<FaClock />}
+              iconStyle={{ color: "#fff", backgroundColor: "#01bf71" }}
+              key={key}
+            >
+              <h3 className="vertical-timeline-element-title">{event.name}</h3>
+              <h4 className="vertical-timeline-element-subtitle">
+                {event.venue}
+              </h4>
+              <p>{moment(event.start).format('LT')}{''}-{''}{moment(event.end).format('LT')}</p>
+              <p>
+                {event.description}
+              </p>
+            </VerticalTimelineElement>
+          ))}
       </VerticalTimeline>
     </div>
   );

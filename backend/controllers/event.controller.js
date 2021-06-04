@@ -1,12 +1,12 @@
 const Event = require("../models/event.model");
+const mongoose = require("mongoose");
 
 const addEvent = (req, res) => {
   const name = req.body.name;
   const description = req.body.description;
   const venue = req.body.venue;
-  const date = req.body.date;
-  const startTime = req.body.startTime;
-  const endTime = req.body.endTime;
+  const start = req.body.start;
+  const end = req.body.end;
   const imageUrl = req.body.imageUrl;
 
   if (!name) {
@@ -30,21 +30,14 @@ const addEvent = (req, res) => {
     });
   }
 
-  if (!date) {
-    return res.status(400).json({
-      success: false,
-      message: "Event date is undefined",
-    });
-  }
-
-  if (!startTime) {
+  if (!start) {
     return res.status(400).json({
       success: false,
       message: "Start time is undefined",
     });
   }
 
-  if (!endTime) {
+  if (!end) {
     return res.status(400).json({
       success: false,
       message: "End time is undefined",
@@ -55,9 +48,8 @@ const addEvent = (req, res) => {
     name,
     description,
     venue,
-    date,
-    startTime,
-    endTime,
+    start,
+    end,
     imageUrl,
   });
 
@@ -78,7 +70,7 @@ const addEvent = (req, res) => {
 };
 
 const getEvents = (req, res) => {
-  Event.find({})
+  Event.find({}).sort({'start': -1})
     .then((result) => {
       res.status(200).json({
         success: true,
