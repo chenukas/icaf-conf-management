@@ -5,6 +5,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import PersonIcon from "@material-ui/icons/Person";
 import PaymentIcon from "@material-ui/icons/Payment";
 import PublishIcon from "@material-ui/icons/Publish";
+import WatchLaterIcon from '@material-ui/icons/WatchLater';
 
 const Sidenav = () => {
   let match = useRouteMatch();
@@ -19,6 +20,14 @@ const Sidenav = () => {
               <HomeIcon />
             </div>{" "}
             <div id="title">Overview</div>
+          </li>
+        </Link>
+        <Link style={{ textDecoration: "none" }} to={`${match.url}/events`}>
+          <li className="sidebar-row">
+            <div id="icon">
+              <WatchLaterIcon />
+            </div>{" "}
+            <div id="title">Events</div>
           </li>
         </Link>
         <Link style={{ textDecoration: "none" }} to={`${match.url}/users`}>

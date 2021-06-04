@@ -44,6 +44,13 @@ const addEvent = (req, res) => {
     });
   }
 
+  if (start > end) {
+    return res.status(400).json({
+      success: false,
+      message: 'Start date is after end date'
+    })
+  }
+
   const event = new Event({
     name,
     description,
@@ -85,7 +92,22 @@ const getEvents = (req, res) => {
     });
 };
 
+const deleteEventById = (req, res) => {
+  Event.findOneAndDelete(req.params.id).then((result) => {
+    res.status(200).json({
+      success: true,
+      data: result
+    })
+  }).catch(err => {
+    res.status(500).json({
+      success: false,
+      message: err.message
+    })
+  })
+}
+
 module.exports = {
   addEvent,
   getEvents,
+  deleteEventById
 };
