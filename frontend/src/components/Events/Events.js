@@ -67,7 +67,8 @@ const Events = () => {
         setVenue('')
     }
 
-    const onSubmitForm = () => {
+    const onSubmitForm = (e) => {
+        e.preventDefault()
         axios({
             method: 'POST',
             url: 'http://localhost:5000/events',
@@ -101,7 +102,7 @@ const Events = () => {
         <div className="events-container">
             <h2 className="events-header" >Manage Events</h2>
             <div className="add-events-container">
-                <form onSubmit={onSubmitForm}>
+                <form onSubmit={(e) => onSubmitForm(e)}>
                     <div className="row add-event-form-row">
                         <div className='col-12'>
                             <div className="form-group">
@@ -180,8 +181,8 @@ const Events = () => {
                 </form>
             </div>
                 <div className="event-cards-container">
-                    {events && events.map((event, key) => (
-                    <Card className={classes.root} variant="outlined" key={key}>
+                    {events && events.map((event, id) => (
+                    <Card className={classes.root} variant="outlined" key={id}>
                     <CardContent>
                       <Typography className={classes.title} color="textSecondary" gutterBottom>
                         {moment(event.start).format("MMM Do YY")}
