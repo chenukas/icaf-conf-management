@@ -93,10 +93,9 @@ const getEvents = (req, res) => {
 };
 
 const deleteEventById = (req, res) => {
-  Event.findOneAndDelete(req.params.id).then((result) => {
+  Event.findByIdAndDelete(req.params.id).then(() => {
     res.status(200).json({
       success: true,
-      data: result
     })
   }).catch(err => {
     res.status(500).json({
