@@ -39,3 +39,13 @@
 .sidebar-row #title {
   flex: 70%;
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar-row #title {
+    display: none;
+  }
+
+  .sidenav-container {
+    width: 50px;
+  }
+}

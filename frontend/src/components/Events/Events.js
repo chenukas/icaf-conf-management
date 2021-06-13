@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     padding: 1,
     margin: 1,
     background: '#e3e3e3',
-    borderStyle: 'none'
+    borderStyle: 'none',
+    marginBottom: 5
   },
   bullet: {
     display: 'inline-block',
@@ -88,6 +89,8 @@ const Events = () => {
     }
 
     const onDeleteEvent = (id) => {
+        console.log(id)
+        debugger
         axios({
             method: 'DELETE',
             url: `http://localhost:5000/events/${id}`
