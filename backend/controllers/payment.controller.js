@@ -3,13 +3,6 @@ const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
-  if (!req.body.paymentId) {
-    return res.status(400).json({
-      success: false,
-      message: "Payment ID is undefined",
-    });
-  }
-
   if (!req.body.type) {
     return res.status(400).json({
       success: false,
@@ -17,17 +10,10 @@ const addPayment = (req, res) => {
     });
   }
 
-  /*if (!req.body.userId) {
+  if (!req.body.userId) {
     return res.status(400).json({
       success: false,
       message: "User ID is undefined",
-    });
-  }*/
-
-  if (!req.body.userName) {
-    return res.status(400).json({
-      success: false,
-      message: "User name is undefined",
     });
   }
 
