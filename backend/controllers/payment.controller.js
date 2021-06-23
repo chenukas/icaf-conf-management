@@ -10,7 +10,7 @@ const addPayment = (req, res) => {
     });
   }
 
-  if (!req.body.userId) {
+  if (!req.body.userID) {
     return res.status(400).json({
       success: false,
       message: "User ID is undefined",
@@ -33,7 +33,7 @@ const addPayment = (req, res) => {
 
   const payment = new Payment(req.body);
 
-  payment.userName = mongoose.Types.ObjectId(req.body.userName);
+  payment.userID = mongoose.Types.ObjectId(req.body.userID);
 
   payment.save
     .then((res) => {
@@ -52,6 +52,7 @@ const addPayment = (req, res) => {
 
 const viewPaymentById = (req, res) => {
   Payment.findById(req.params.id)
+    .populate("userID")
     .then((res) => {
       res.status(200).json({
         success: true,
