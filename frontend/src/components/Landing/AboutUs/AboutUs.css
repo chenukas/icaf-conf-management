@@ -11,17 +11,15 @@
 }
 
 .abouth4 {
-  color: #4d4d4d;
+  color: #4d4d4db7;
   text-align: center;
   margin-bottom: 30px;
 }
 
 .aboutP {
-  margin-top: 24px;
   font-size: 18px;
-  max-width: 1000px;
-  margin-left: 300px;
+  padding-left: 100px;
+  padding-right: 100px;
   color: #ffffff;
   text-align: center;
-  margin-top: 5px;
 }
