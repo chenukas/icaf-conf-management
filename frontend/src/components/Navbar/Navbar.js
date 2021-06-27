@@ -4,10 +4,10 @@ import logo from "../../images/logo.png";
 
 const Navbar = ({ toggle }) => {
   return (
-    <div className="nav">
+    <div className="nav" >
       <div className="navbarContainer">
         <h3 to="/" className="navLogo">
-          <img className="navLogoImg" src={logo} alt="logo" />
+          <img style={{ width: "5.5vw" }} src={logo} alt="logo" />
           ICAF
         </h3>
         <div className="mobileIcon" onClick={toggle}>
@@ -35,7 +35,7 @@ const Navbar = ({ toggle }) => {
             </p>
           </div>
           <div className="navBtn">
-            <p className="navBtnLink" to="">
+            <p className="navBtnLink" to="/signin">
               Sign In
             </p>
           </div>
