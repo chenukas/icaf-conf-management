@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import lady from "../../../images/conference.svg";
+import "./Hero.css";
 
 const Hero = () => {
   const [hover, setHover] = useState(false);
@@ -10,28 +11,24 @@ const Hero = () => {
 
   return (
     <div className="heroContainer row">
-      <div className="col">
+      <div className="col" style={{ marginLeft: "70px" }}>
         <div>
-          <img
-            className="image"
-            style={{ width: "30vw" }}
-            src={lady}
-            alt="listening to a conference"
-          />
+          <img className="image" src={lady} alt="listening to a conference" />
         </div>
       </div>
-      <div className="col">
-        <div className="heroH1">Topic of th Conference</div>
+      <div className="col" style={{ marginRight: "70px" }}>
+        <div className="heroH1">
+          International Conference on Application Frameworks
+        </div>
         <div className="heroP">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud
         </div>
         <div className="heroBtnWrapper">
-          <div to="/#" onMouseEnter={onHover} onMouseLeave={onHover}>
-            Get Started 
-            {/* {hover ? <arrowForward /> : <arrowRight />} */}
-          </div>
+          <button type="button" className="button">
+            Get Started
+          </button>
         </div>
       </div>
     </div>
