@@ -1,1 +1,39 @@
+.overview-container {
+    width: 1000px;
+  }
 
+ 
+@media screen and (max-width: 768px) {
+    .overview-container {
+        width: 500px;
+    }
+  }
+  
+  .overview-header {
+    color: #01bf71;
+    padding-left: 1em;
+    margin-bottom: 1em;
+  }
+
+  .overview-container-grid {
+      margin-left: 2em;
+      margin-bottom: 2em;
+  }
+
+  .grid-item {
+      background-color: black;
+      height: 250px;
+      margin-bottom: 1em;
+      border-radius: 25px;
+  }
+
+  .stats-text {
+      margin-top: 2em;
+      color: #01bf71;
+      text-align: center;
+  }
+
+  .stats-value {
+      color: '#fff';
+      text-align: center;
+  }
