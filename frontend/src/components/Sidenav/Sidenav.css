@@ -1,5 +1,5 @@
 .sidenav-container {
-  height: 100vh;
+  height: 100%;
   width: 250px;
   background-color: #010606;
 }
@@ -26,8 +26,8 @@
 
 .sidebar-list .sidebar-row:hover {
   cursor: pointer;
-  background-color: #e6e6e6;
-  color: #01bf71;
+  background-color: #01bf71;
+  color: #e6e6e6;
 }
 
 .sidebar-row #icon {
@@ -38,4 +38,14 @@
 
 .sidebar-row #title {
   flex: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-row #title {
+    display: none;
+  }
+
+  .sidenav-container {
+    width: 50px;
+  }
 }

@@ -1,0 +1,17 @@
+.timeline-container {
+  margin-top: 2em;
+}
+
+.timeline-header {
+  text-align: center;
+  color: #000;
+}
+
+.vertical-timeline-element-title {
+  color: #01bf71;
+}
+
+.vertical-timeline-element-subtitle {
+  color: #a1a1a1;
+  font-size: medium;
+}

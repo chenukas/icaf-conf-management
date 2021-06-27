@@ -2,8 +2,15 @@ body {
   background-color: #fff;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #01bf71;
+}
