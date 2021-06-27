@@ -4,7 +4,7 @@ import logo from "../../images/logo.png";
 
 const Navbar = ({ toggle }) => {
   return (
-    <div className="nav">
+    <div className="nav" >
       <div className="navbarContainer">
         <h3 to="/" className="navLogo">
           <img style={{ width: "5.5vw" }} src={logo} alt="logo" />
