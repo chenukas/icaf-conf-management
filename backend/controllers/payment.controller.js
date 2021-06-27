@@ -1,5 +1,5 @@
 const Payment = require("../models/payment.model");
-const User = require("../models/user.model");
+//const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
@@ -33,7 +33,7 @@ const addPayment = (req, res) => {
 
   const payment = new Payment(req.body);
 
-  payment.userID = mongoose.Types.ObjectId(req.body.userID);
+  //payment.userID = mongoose.Types.ObjectId(req.body.userID);
 
   payment.save
     .then((res) => {
@@ -52,7 +52,7 @@ const addPayment = (req, res) => {
 
 const viewPaymentById = (req, res) => {
   Payment.findById(req.params.id)
-    .populate("userID")
+
     .then((res) => {
       res.status(200).json({
         success: true,
