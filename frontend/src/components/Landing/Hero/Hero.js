@@ -17,10 +17,10 @@ const Hero = () => {
         </div>
       </div>
       <div className="col" style={{ marginRight: "70px" }}>
-        <div className="heroH1">
+        <div className="heroH1 row">
           International Conference on Application Frameworks
         </div>
-        <div className="heroP" >
+        <div className="heroP row" >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud
