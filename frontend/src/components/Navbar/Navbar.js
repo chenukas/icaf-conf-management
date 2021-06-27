@@ -7,15 +7,15 @@ const Navbar = ({ toggle }) => {
     <div className="nav" >
       <div className="navbarContainer">
         <h3 to="/" className="navLogo">
-          <img style={{ width: "5.5vw" }} src={logo} alt="logo" />
-          ICAF
+          <img style={{ width: "2.2vw" }} src={logo} alt="logo" />
+          &nbsp; ICAF
         </h3>
         <div className="mobileIcon" onClick={toggle}>
           <p className="faBars"></p>
         </div>
         <div className="navMenu">
           <div className="navItem">
-            <p className="navLinks" to="">
+            <p className="navLinks" href="#aboutus" to="">
               About
             </p>
           </div>
