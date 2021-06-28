@@ -3,21 +3,14 @@ const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
   const type = req.body.type;
-  const userId = req.body.type;
-  const payDate = req.body.type;
-  const amount = req.body.type;
+  //const userId = req.body.type;
+  const payDate = req.body.payDate;
+  const amount = req.body.amount;
 
   if (!type) {
     return res.status(400).json({
       success: false,
       message: "Type is undefined",
-    });
-  }
-
-  if (!userId) {
-    return res.status(400).json({
-      success: false,
-      message: "User ID is undefined",
     });
   }
 
@@ -36,7 +29,7 @@ const addPayment = (req, res) => {
   }
 
   //Adding payments
-  const payment = new Payment({ type, userId, payDate, amount });
+  const payment = new Payment({ type, payDate, amount });
 
   payment
     .save()
@@ -63,7 +56,7 @@ const viewPaymentById = (req, res) => {
       });
     })
     .catch((err) => {
-      res.status(501).json({
+      res.status(500).json({
         success: false,
         data: err.message,
       });
@@ -79,7 +72,7 @@ const viewAllPayments = (req, res) => {
       });
     })
     .catch((err) => {
-      res.status(501).json({
+      res.status(500).json({
         success: false,
         data: err.message,
       });
