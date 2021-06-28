@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
   return (
-    <div className="nav" >
+    <div className="nav">
       <div className="navbarContainer">
         <h3 to="/" className="navLogo">
           <img style={{ width: "2.2vw" }} src={logo} alt="logo" />
@@ -31,16 +31,20 @@ const Navbar = ({ toggle }) => {
             </p>
           </div>
           <div className="navItem">
-            <Link className="navLinks" style={{textDecoration:"none"}} to="/register">
+            <Link
+              className="navLinks"
+              style={{ textDecoration: "none" }}
+              to="/register"
+            >
               Sign Up
             </Link>
           </div>
           <div className="navBtn">
-<<<<<<< HEAD
-            <a className="navBtnLink" href="/login" style={{textDecoration:"none", marginBottom:20}}>
-=======
-            <p className="navBtnLink" to="/signin">
->>>>>>> 64acb0d4f76e8ecdcfd1588d80bb1a3dd868e914
+            <a
+              className="navBtnLink"
+              href="/login"
+              style={{ textDecoration: "none" }}
+            >
               Sign In
             </a>
           </div>
