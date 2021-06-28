@@ -48,6 +48,7 @@ class Users extends Component {
                 <th>Email</th>
                 <th>Contact Number</th>
                 <th>Position</th>
+                <th>Type</th>
                 <th>Edit</th>
               </tr>
             </thead>
@@ -58,7 +59,26 @@ class Users extends Component {
                     <td>{item.fullName}</td>
                     <td>{item.email}</td>
                     <td>{item.contactNumber}</td>
-                    <td>{item.position}</td>
+                    <td>
+                      {item.position == 0
+                        ? "User"
+                        : item.position == 1
+                        ? "Admin"
+                        : item.position == 2
+                        ? "Editor"
+                        : item.position == 3
+                        ? "Reviewer"
+                        : null}
+                    </td>
+                    <td>
+                      {item.type == "A"
+                        ? "Attendee"
+                        : item.type == "RP"
+                        ? "Research Presenter"
+                        : item.type == "WP"
+                        ? "Workshop Presenter"
+                        : "No Type"}
+                    </td>
                     <td>
                       {item.position == 1 ? (
                         <Link>
