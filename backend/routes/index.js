@@ -3,6 +3,7 @@ const userRouter = require("./user.routes");
 const eventRouter = require("./event.routes");
 const statisticRouter = require("./statistic.routes");
 const paymentRouter = require("./payment.routes");
+const submissionRouter = require('./submission.routes');
 
 const init = (app) => {
   app.use(healthCheckRouter);
@@ -10,6 +11,7 @@ const init = (app) => {
   app.use(eventRouter);
   app.use(statisticRouter);
   app.use(paymentRouter);
+  app.use(submissionRouter);
 };
 
 module.exports = init;
