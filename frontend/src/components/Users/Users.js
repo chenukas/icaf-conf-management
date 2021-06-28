@@ -1,65 +1,92 @@
 import React, { Component } from "react";
-import Edit from "../../images/edit.gif";
+import Edit from "../../images/edit.png";
+import NoEdit from "../../images/noedit.png";
 import { Link } from "react-router-dom";
+import "./Users.css";
+import axios from "axios";
 
 class Users extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      fullName: "Ravindu Dilhara Kariyawasam",
-      email: "admin123@gmail.com",
-      password: "",
-      contactNumber: "0763941256",
-      position: 0,
-      type: "",
-      confirmPassword: "",
+      users: [],
     };
+  }
+
+  navigateEditPage = (e, userID) => {
+    window.location = `/change-user/${userID}`;
+  };
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:5000/getUsers")
+      .then((res) => {
+        this.setState({
+          users: res.data.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    if (this.state.position === 0) {
+      this.setState({
+        positionName: "Normal User",
+      });
+    }
   }
 
   render() {
     return (
-      <div style={{ marginTop: 50, marginLeft: 30 }}>
-        <div
-          className="container"
-          style={{ width: "75%", marginTop: 50, marginLeft: 500 }}
-        >
-          <h1>USERS OF CONFERENCE</h1>
+      <div className="user-container">
+        <h2 className="user-header">Manage Users</h2>
+        <div className="user-table">
+          <table className="table">
+            <thead>
+              <tr className="table-header">
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Position</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.users.length > 0 &&
+                this.state.users.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.fullName}</td>
+                    <td>{item.email}</td>
+                    <td>{item.contactNumber}</td>
+                    <td>{item.position}</td>
+                    <td>
+                      {item.position == 1 ? (
+                        <Link>
+                          <img
+                            style={{ width: 25 }}
+                            src={NoEdit}
+                            alt="profile"
+                          />
+                        </Link>
+                      ) : (
+                        <div
+                          onClick={(e) => this.navigateEditPage(e, item._id)}
+                        >
+                          <Link>
+                            <img
+                              style={{ width: 25 }}
+                              src={Edit}
+                              alt="profile"
+                            />
+                          </Link>
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
-        <table class="table" style={{ width: 1300, marginLeft: 80 }}>
-          <thead style={{ backgroundColor: "red", color: "white" }}>
-            <tr>
-              <th scope="col" style={{ width: 250 }}>
-                User Name
-              </th>
-              <th scope="col" style={{ width: 250 }}>
-                Email
-              </th>
-              <th scope="col" style={{ width: 250 }}>
-                Contact Number
-              </th>
-              <th scope="col" style={{ width: 250 }}>
-                Position
-              </th>
-              <th scope="col" style={{ width: 50 }}>
-                Edit User Position
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gihan Perera</td>
-              <td>Mark@gmail.com</td>
-              <td>0764562109</td>
-              <td>Normal User</td>
-              <td>
-                <Link>
-                  <img style={{ width: 25 }} src={Edit} alt="profile" />
-                </Link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     );
   }

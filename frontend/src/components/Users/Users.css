@@ -1,0 +1,17 @@
+.user-container {
+  width: 1000px;
+}
+
+.user-header {
+  color: #01bf71;
+  padding-left: 1em;
+}
+
+.user-table {
+  padding-left: 2em;
+}
+
+.table-header {
+  width: "100%";
+  background-color: #01bf71;
+}

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Admin from "../../images/adminProfile.png";
+import axios from "axios";
+import swal from "sweetalert";
+import { Button } from "reactstrap";
 
 class UserProfile extends Component {
   constructor(props) {
@@ -12,20 +15,68 @@ class UserProfile extends Component {
       contactNumber: "0763941256",
       position: 0,
       type: "",
+      typeName: "",
       confirmPassword: "",
       positionName: "",
     };
   }
 
   componentDidMount() {
+    axios
+      .get("http://localhost:5000/viewUser/" + this.props.match.params.id)
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          fullName: response.data.fullName,
+          email: response.data.email,
+          contactNumber: response.data.contactNumber,
+          position: response.data.position,
+          type: response.data.type,
+        });
+        if (this.state.type === "A") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Attendee",
+          });
+        } else if (this.state.type === "WP") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Workshop Presenter",
+          });
+        } else if (this.state.type === "RP") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Research Presenter",
+          });
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     if (this.state.position == 0) {
       this.setState({
         positionName: "Normal User",
+      });
+    } else if (this.state.position == 2) {
+      this.setState({
+        positionName: "Editor",
+      });
+    } else if (this.state.position == 3) {
+      this.setState({
+        positionName: "Reviewer",
       });
     }
   }
 
   render() {
+    let button;
+    if (this.state.type === "RP" || this.state.type == "A") {
+      button = (
+        <button type="button" class="btn btn-primary col-4">
+          Go To Payment
+        </button>
+      );
+    }
     return (
       <div
         className="container"
@@ -34,7 +85,7 @@ class UserProfile extends Component {
         <div className="row">
           <div className="col-3">
             <div>
-              <img style={{ width: 240 }} src={Admin} alt="profile" />
+              <img style={{ width: 280 }} src={Admin} alt="profile" />
             </div>
           </div>
           <div
@@ -56,10 +107,14 @@ class UserProfile extends Component {
               <label>{this.state.contactNumber}</label>
             </div>
             <div>
+              <label>{this.state.typeName}</label>
+            </div>
+            <div>
               <label>{this.state.positionName}</label>
             </div>
           </div>
         </div>
+        <div className="mt-5">{button}</div>
       </div>
     );
   }

@@ -49,7 +49,12 @@ class Login extends Component {
             email: "",
             password: "",
           });
-          console.log(res.data.token);
+          console.log(res.data.user._id);
+          if (res.data.user.position == 1) {
+            window.location = "/dashboard";
+          } else {
+            window.location = "/user/" + res.data.user._id;
+          }
         });
       }
       if (res.data.success === false) {

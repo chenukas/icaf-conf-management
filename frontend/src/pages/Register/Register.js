@@ -153,7 +153,8 @@ class Register extends Component {
               target="typePopover"
             >
               <PopoverBody>
-                Are you Researcher put <p style={{ fontWeight: "bold" }}>R</p>
+                Are you Research Presenter put{" "}
+                <p style={{ fontWeight: "bold" }}>RP</p>
                 Are you Workshop Presenter put{" "}
                 <p style={{ fontWeight: "bold" }}>WP</p>
                 Are you Attendee put <p style={{ fontWeight: "bold" }}>A</p>
