@@ -6,7 +6,7 @@ const initialState = {
   type: "",
   userId: "",
   payDate: "",
-  amount: "",
+  amount: 0.0,
 };
 
 class Payments extends Component {
@@ -30,7 +30,7 @@ class Payments extends Component {
       amount: this.state.amount,
     };
     axios
-      .post("http://localhost:5000/payments/add", payment)
+      .post("http://localhost:5000/payments", payment)
       .then((res) => {
         alert("New Payment Is Done Successfully");
       })
@@ -39,6 +39,7 @@ class Payments extends Component {
         alert(error.message);
       });
   }
+
   render() {
     return (
       <div className="payment-container">
