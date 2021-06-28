@@ -7,5 +7,4 @@ const paymentSchema = new mongoose.Schema({
   amount: { type: Number, require: true },
 });
 
-const Payment = mongoose.model("payments", paymentSchema);
-module.exports = Payment;
+module.exports = mongoose.model("payment", paymentSchema);
