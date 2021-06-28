@@ -5,15 +5,12 @@ import axios from "axios";
 
 const Overview = () => {
   const [stats, setStats] = useState([])
-  const [total, setTotal] = useState([])
-
   const fetchData = useCallback(() => {
     axios({
       method: 'GET',
       url: 'http://localhost:5000/stats'
     }).then((response) => {
       setStats(response.data.data)
-      setTotal(response.data.data.totalPayments[0])
     }).catch((err) => {
       console.log(err)
     })
@@ -42,7 +39,7 @@ const Overview = () => {
         </Grid>
         <Grid item xs={10} sm={6} className="grid-item">
         <h3 className="stats-text">Payments</h3>
-        <h4 className="stats-value">Rs. {total.total}</h4>
+        <h4 className="stats-value">Rs. { stats.totalPayments }</h4>
         </Grid>
       </Grid>
       </div>

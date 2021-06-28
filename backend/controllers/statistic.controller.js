@@ -8,14 +8,17 @@ const getStatistics = async (req, res) => {
         const totalEvents = await Event.find({}).count()
         const totalParticipants = await User.find({}).count()
         const totalSubmissions = await Submission.find({}).count()
-        const totalPayments = await Payment.aggregate([{ 
+        var totalPayments = 0
+        await Payment.aggregate([{ 
             $group: { 
                 _id: null, 
                 total: { 
                     $sum: "$amount" 
                 } 
             } 
-        }])
+        }]).then((response) => {
+            totalPayments = response[0].total
+        })
 
         return res.status(200).json({
             success: true, 
