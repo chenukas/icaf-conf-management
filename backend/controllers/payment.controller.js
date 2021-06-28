@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
   const type = req.body.type;
-  //const userId = req.body.type;
+  const userId = req.body.type;
   const payDate = req.body.payDate;
   const amount = req.body.amount;
 
@@ -29,7 +29,7 @@ const addPayment = (req, res) => {
   }
 
   //Adding payments
-  const payment = new Payment({ type, payDate, amount });
+  const payment = new Payment({ type, userId, payDate, amount });
 
   payment
     .save()
