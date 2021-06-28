@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
   return (
@@ -30,14 +31,14 @@ const Navbar = ({ toggle }) => {
             </p>
           </div>
           <div className="navItem">
-            <p className="navLinks" to="">
+            <Link className="navLinks" style={{textDecoration:"none"}} to="/register">
               Sign Up
-            </p>
+            </Link>
           </div>
           <div className="navBtn">
-            <p className="navBtnLink" to="">
+            <a className="navBtnLink" href="/login" style={{textDecoration:"none", marginBottom:20}}>
               Sign In
-            </p>
+            </a>
           </div>
         </div>
       </div>
