@@ -30,7 +30,7 @@ class Payments extends Component {
       amount: this.state.amount,
     };
     axios
-      .post("http://localhost:5000/payments", payment)
+      .post("http://localhost:5000/payments/add", payment)
       .then((res) => {
         alert("New Payment Is Done Successfully");
       })
@@ -79,7 +79,7 @@ class Payments extends Component {
             </div>
             <div className="mb-3">
               <label htmlFor="payDate" className="form-label">
-                Pay Date
+                Date of Payment
               </label>
               <input
                 type="date"
