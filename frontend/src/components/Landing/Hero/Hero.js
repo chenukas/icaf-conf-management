@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import lady from "../../../images/conference.svg";
 import "./Hero.css";
 
 const Hero = () => {
-  const [hover, setHover] = useState(false);
+  /* const [hover, setHover] = useState(false);
 
   const onHover = () => {
     setHover(!hover);
-  };
+  }; */
 
   return (
     <div className="heroContainer row">
