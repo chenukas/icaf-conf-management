@@ -1,28 +1,110 @@
-.heroContainer{
-    background: #0c0c0c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30;
-    height: 800px;
-    position: relative;
-    z-index: 1;
+.heroContainer {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 ;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 1;
 }
 
-/* .heroBg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-} */
+.heroBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
 .image {
-    height: auto;
-    margin: 20px;
-    padding: 20px;
+  height: auto;
+  margin: 20px;
+  padding: 20px;
+  width: 30vw;
 }
 
+.heroContent {
+  z-index: 3;
+  max-width: 1200px;
+  position: absolute;
+  padding: 8px, 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroH1 {
+  color: #010606;
+  font-size: 48px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .heroH1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480) {
+  .heroH1 {
+    font-size: 32px;
+  }
+}
+
+.heroP {
+  margin-top: 24px;
+  color: #010606;
+  font-size: 24px;
+  text-align: center;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .heroP {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroP {
+    font-size: 18px;
+  }
+}
+
+.heroBtnWrapper {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .button {
+  border-radius: 50px;
+  background: #01bf71;
+  white-space: nowrap;
+} */
+.button {
+  border-radius: 50px;
+  background-color: #01bf71;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010606;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button:hover {
+  transition: all 0.2s ease-in-out;
+  background: #010606;
+  color: #fff;
+}

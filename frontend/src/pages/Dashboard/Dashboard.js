@@ -6,6 +6,7 @@ import Users from "../../components/Users/Users";
 import Publications from "../../components/Publications/Publications";
 import Payments from "../../components/Payments/Payments";
 import Navbar from "../../components/Navbar/Navbar";
+import Events from '../../components/Events/Events'
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -21,6 +22,7 @@ const Dashboard = () => {
           <br />
           <Switch>
             <Route exact path={`${match.url}`} component={Overview} />
+            <Route path={`${match.url}/events`} component={Events} />
             <Route path={`${match.url}/users`} component={Users} />
             <Route
               path={`${match.url}/publications`}

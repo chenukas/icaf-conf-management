@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
   return (
-    <div className="nav">
+    <div className="nav" >
       <div className="navbarContainer">
         <h3 to="/" className="navLogo">
-          <img className="navLogoImg" src={logo} alt="logo" />
-          ICAF
+          <img style={{ width: "2.2vw" }} src={logo} alt="logo" />
+          &nbsp; ICAF
         </h3>
         <div className="mobileIcon" onClick={toggle}>
           <p className="faBars"></p>
         </div>
         <div className="navMenu">
           <div className="navItem">
-            <p className="navLinks" to="">
+            <p className="navLinks" href="#aboutus" to="">
               About
             </p>
           </div>
@@ -36,7 +36,11 @@ const Navbar = ({ toggle }) => {
             </Link>
           </div>
           <div className="navBtn">
+<<<<<<< HEAD
             <a className="navBtnLink" href="/login" style={{textDecoration:"none", marginBottom:20}}>
+=======
+            <p className="navBtnLink" to="/signin">
+>>>>>>> 64acb0d4f76e8ecdcfd1588d80bb1a3dd868e914
               Sign In
             </a>
           </div>

@@ -1,0 +1,43 @@
+.events-container {
+  width: 1000px;
+}
+
+.events-header {
+  color: #01bf71;
+  padding-left: 1em;
+}
+
+.event-cards-container {
+  padding-top: 1em;
+  padding-left: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1232px) {
+  .event-cards-container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 950px) {
+  .events-container {
+      width: 95%;
+  }
+  .event-cards-container {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media (max-width: 630px) {
+  .events-container {
+      width: 100%;
+  }
+  .event-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-event-form-row {
+    margin: 20px;
+}

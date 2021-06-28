@@ -1,0 +1,27 @@
+.heroContainer1 {
+  background: #000000;
+  height: 100vh;
+  width: 100%;
+}
+
+.abouth2 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.abouth4 {
+  color: #4d4d4d;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.aboutP {
+  margin-top: 24px;
+  font-size: 18px;
+  max-width: 1000px;
+  margin-left: 300px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 5px;
+}

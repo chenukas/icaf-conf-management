@@ -12,13 +12,21 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+<<<<<<< HEAD
     "reactstrap": "^8.9.0",
     "sweetalert": "^2.1.2"
+=======
+    "react-vertical-timeline-component": "^3.3.3",
+    "web-vitals": "^1.1.1"
+>>>>>>> 64acb0d4f76e8ecdcfd1588d80bb1a3dd868e914
   },
   "scripts": {
     "start": "react-scripts start",
