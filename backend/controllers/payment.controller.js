@@ -2,7 +2,7 @@ const Payment = require("../models/payment.model");
 //const User = require("../models/user.model");
 const mongoose = require("mongoose");
 
-const addPayment = (req, res) => {
+const addPayment = async (req, res) => {
   if (!req.body.type) {
     return res.status(400).json({
       success: false,
@@ -10,7 +10,7 @@ const addPayment = (req, res) => {
     });
   }
 
-  if (!req.body.userID) {
+  if (!req.body.userId) {
     return res.status(400).json({
       success: false,
       message: "User ID is undefined",
@@ -35,51 +35,33 @@ const addPayment = (req, res) => {
 
   //payment.userID = mongoose.Types.ObjectId(req.body.userID);
 
-  payment.save
-    .then((res) => {
-      res.status(200).json({
-        success: true,
-        message: result,
-      });
+  await Payment.save()
+    .then((data) => {
+      res.status(200).send({ data: data });
     })
     .catch((err) => {
-      res.status(500).json({
-        success: false,
-        message: err.message,
-      });
+      res.status(500).send({ err: err.message });
     });
 };
 
-const viewPaymentById = (req, res) => {
-  Payment.findById(req.params.id)
+const viewPaymentById = async (req, res) => {
+  await Payment.findById(req.params.id)
 
-    .then((res) => {
-      res.status(200).json({
-        success: true,
-        message: result,
-      });
+    .then((data) => {
+      res.status(200).send({ data: data });
     })
     .catch((err) => {
-      res.status(500).json({
-        success: false,
-        message: err.message,
-      });
+      res.status(500).send({ err: err.message });
     });
 };
 
-const viewAllPayments = (req, res) => {
-  Payment.find({})
-    .then((res) => {
-      res.status(200).json({
-        success: true,
-        message: result,
-      });
+const viewAllPayments = async (req, res) => {
+  await Payment.find({})
+    .then((data) => {
+      res.status(200).send({ data: data });
     })
     .catch((err) => {
-      res.status(500).json({
-        success: false,
-        message: err.message,
-      });
+      res.status(500).send({ err: err.message });
     });
 };
 
