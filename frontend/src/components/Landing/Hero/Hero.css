@@ -39,11 +39,9 @@
 }
 
 .heroH1 {
-  color: #010606;
   font-size: 48px;
-  text-align: center;
 }
-
+/* 
 @media screen and (max-width: 768px) {
   .heroH1 {
     font-size: 40px;
@@ -54,16 +52,14 @@
   .heroH1 {
     font-size: 32px;
   }
-}
+} */
 
 .heroP {
   margin-top: 24px;
-  color: #010606;
   font-size: 24px;
-  text-align: center;
   max-width: 600px;
 }
-
+/* 
 @media screen and (max-width: 768px) {
   .heroP {
     font-size: 24px;
@@ -74,7 +70,7 @@
   .heroP {
     font-size: 18px;
   }
-}
+} */
 
 .heroBtnWrapper {
   margin-top: 32px;
@@ -107,4 +103,9 @@
   transition: all 0.2s ease-in-out;
   background: #010606;
   color: #fff;
+}
+
+.a1{
+  color: #010606;
+  text-align: center;
 }

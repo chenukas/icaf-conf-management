@@ -16,14 +16,13 @@ const Hero = () => {
           <img className="image" src={lady} alt="listening to a conference" />
         </div>
       </div>
-      <div className="col" style={{ marginRight: "70px" }}>
-        <div className="heroH1 row">
+      <div className="col a1" style={{ marginRight: "70px" }}>
+        <div className="heroH1 ">
           International Conference on Application Frameworks
         </div>
-        <div className="heroP row" >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud
+        <div className="heroP " >
+          1st, 2nd, and 3rd July 2021
+          <p>Sri Lanka Institute of Information Technology</p>
         </div>
         <div className="heroBtnWrapper">
           <button type="button" className="button">
