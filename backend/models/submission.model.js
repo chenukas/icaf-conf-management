@@ -7,7 +7,7 @@ const submissionSchema = new Schema(
     abstract: { type: String, require: true },
     authors: [
       {
-        type: /* Schema.Types.ObjectId */String,
+        type: String,
       },
     ],
     fileURL: { type: String, require: true },
