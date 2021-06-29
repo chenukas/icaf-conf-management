@@ -30,7 +30,8 @@
     "mongoose": "^5.12.6",
     "multer": "^1.4.2",
     "path": "^0.12.7",
-    "salted-md5": "^4.0.2"
+    "salted-md5": "^4.0.2",
+    "url-polyfill": "^1.1.12"
   },
   "devDependencies": {
     "chai": "^4.3.4",
