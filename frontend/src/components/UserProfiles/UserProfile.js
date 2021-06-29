@@ -69,7 +69,7 @@ class UserProfile extends Component {
   }
 
   navigatePayments() {
-    window.location = "/dashboard/payments";
+    window.location = "/payments";
   }
 
   render() {
