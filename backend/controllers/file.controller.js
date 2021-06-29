@@ -1,5 +1,13 @@
 const firebase = require('../util/firebase');
 
+/**
+ * Upload files
+ * POST /files
+ * @param req
+ * @param res
+ * @param next
+ * @returns {Promise<*>}
+ */
 const fileUploadHandler = async (req, res, next) => {
     const {file} = req;
     if (!file) {

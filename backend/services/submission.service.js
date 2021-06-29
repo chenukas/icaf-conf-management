@@ -2,13 +2,15 @@ const Submission = require('../models/submission.model');
 
 /**
  * Create new submission record
+ * @param uid - uid of publisher
  * @param title - title of submission
  * @param abstract - abstract of submission
+ * @param authors - list of authors for publication
  * @param fileURL - url of file uploaded
  * @returns {Document}
  */
-const createSubmissionRecord = ({title, abstract, fileURL}) => {
-    return new Submission({title, abstract, fileURL}).save();
+const createSubmissionRecord = ({uid, title, abstract, authors, fileURL}) => {
+    return new Submission({uid, title, abstract,authors, fileURL}).save();
 }
 
 /**
