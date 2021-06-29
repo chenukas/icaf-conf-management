@@ -2,11 +2,13 @@ import React from "react";
 import "./Navbar.css";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
+import DehazeIcon from '@material-ui/icons/Dehaze';
 
 const Navbar = ({ toggle }) => {
   const logout = (e) => {
     localStorage.removeItem("logUserId");
     localStorage.removeItem("logUserName");
+    window.location = '/'
   };
 
   return (
@@ -14,12 +16,12 @@ const Navbar = ({ toggle }) => {
       <div className="navbarContainer">
         <Link to="/" style={{ textDecoration: 'none'}}>
         <h3 className="navLogo">
-          <img style={{ width: "2.2vw" }} src={logo} alt="logo" />
+          <img className="navLogoImg" src={logo} alt="logo" />
           &nbsp; ICAF
         </h3>
         </Link>
-        <div className="mobileIcon" onClick={toggle}>
-          <p className="faBars"></p>
+        <div className="mobileIcon">
+          <DehazeIcon fontSize='large'  onClick={toggle}/>
         </div>
         <div className="navMenu">
           <div className="navItem"  href="#about">
@@ -49,25 +51,22 @@ const Navbar = ({ toggle }) => {
               <p className="navLinks">Sign Up</p>
             </Link>
           </div>
-          <div className="navBtn">
-            {localStorage.getItem("logUserId") == null ? (
-              <a
-                className="navBtnLink"
-                href="/login"
-                style={{ textDecoration: "none" }}
-              >
-                Sign In
-              </a>
-            ) : (
-              <a
-                className="navBtnLink"
-                style={{ textDecoration: "none" }}
-                href="/"
-                onClick={logout}
-              >
-                Logout
-              </a>
-            )}
+          <div className="navItem">
+          {localStorage.getItem("logUserId") == null ? (
+            <Link
+              className="navBtn"
+              style={{ textDecoration: "none" }}
+              to="/login"
+            >
+              Sign In
+            </Link>) : (<Link
+              className="navBtn"
+              style={{ textDecoration: "none" }}
+              to="/"
+              onClick={() => logout()}
+            >
+              Sign Out
+            </Link>) }
           </div>
         </div>
       </div>

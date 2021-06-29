@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%
 }
 
 .navbarContainer {
@@ -27,16 +28,12 @@
   align-items: center;
   font-weight: bold;
   text-decoration: none;
-  margin-top: 0.25em;
+  margin-top: 13px;
 }
 
 .navLogoImg {
   width: 50px;
   margin-right: 0.5em;
-}
-
-.mobileIcon {
-  display: none;
 }
 
 .navMenu {
@@ -48,6 +45,12 @@
 
 .navItem {
   height: 80px;
+}
+
+.mobileIcon {
+  margin-top: 20px;
+  color:#fff;
+  cursor: pointer;
 }
 
 .navLinks {
@@ -70,23 +73,28 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navBtn {
+  .navMenu {
     display: none;
   }
 }
 
-.navBtnLink {
+@media screen and (min-width: 768px) {
+  .mobileIcon {
+    display: none;
+  }
+}
+
+.navBtn {
   border-radius: 50px;
   background-color: #01bf71;
   white-space: nowrap;
   padding: 10px 22px;
   color: #010606;
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 18px;
   outline: none;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
 
@@ -94,4 +102,9 @@
   transition: all 0.2s ease-in-out;
   background: #fff;
   color: #010606;
+}
+.navBtn:hover {
+  background: #116843;
+  color: #fff;
+  text-decoration: none;
 }
