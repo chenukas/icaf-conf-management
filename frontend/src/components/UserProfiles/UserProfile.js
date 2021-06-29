@@ -68,11 +68,19 @@ class UserProfile extends Component {
     }
   }
 
+  navigatePayments() {
+    window.location = "/dashboard/payments";
+  }
+
   render() {
     let button;
     if (this.state.type === "RP" || this.state.type == "A") {
       button = (
-        <button type="button" class="btn btn-primary col-4">
+        <button
+          type="button"
+          class="btn btn-primary col-4"
+          onClick={this.navigatePayments}
+        >
           Go To Payment
         </button>
       );
