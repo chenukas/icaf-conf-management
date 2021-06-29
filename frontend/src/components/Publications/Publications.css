@@ -1,0 +1,33 @@
+.publications-container {
+    width: 1000px;
+  }
+  
+  .publications-header {
+    color: #01bf71;
+    padding-left: 1em;
+  }
+
+  .publication-table-container {
+    padding-left: 2em;
+    width: 75vw;
+    padding-bottom: 50vh;
+  }
+
+  .approve-button {
+      height: 25px;
+      width: auto;
+      border-style: none;
+      background-color: #67a1db;
+      color: #fff;
+      border-radius: 5px;
+  }
+
+  .approve-button-disabled {
+    height: 25px;
+    width: auto;
+    border-style: none;
+    background-color: #92979c;
+    color: #fff;
+    border-radius: 5px;
+}
+
