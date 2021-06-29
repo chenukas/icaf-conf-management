@@ -3,6 +3,7 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
+    <section id="about">
     <div className="heroContainer1" >
       <h4 style={{ paddingTop: "15vw" }} className="abouth4" id="aboutus">About our conference</h4>
       <h2 className="abouth2">International Conference on Application Frameworks 2021</h2>
@@ -21,6 +22,7 @@ const AboutUs = () => {
         all publications are available in IEEE Xplore digital library
       </p>
     </div>
+    </section>
   );
 };
 

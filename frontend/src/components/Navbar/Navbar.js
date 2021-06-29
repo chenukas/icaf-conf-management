@@ -13,16 +13,18 @@ const Navbar = ({ toggle }) => {
   return (
     <div className="nav">
       <div className="navbarContainer">
-        <h3 to="/" className="navLogo">
+        <Link to="/" style={{ textDecoration: 'none'}}>
+        <h3 className="navLogo">
           <img style={{ width: "2.2vw" }} src={logo} alt="logo" />
           &nbsp; ICAF
         </h3>
+        </Link>
         <div className="mobileIcon" onClick={toggle}>
           <p className="faBars"></p>
         </div>
         <div className="navMenu">
-          <div className="navItem">
-            <p className="navLinks" href="#aboutus" to="">
+          <div className="navItem"  href="#about">
+            <p className="navLinks">
               About
             </p>
           </div>
