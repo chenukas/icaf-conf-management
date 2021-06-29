@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { UncontrolledPopover, PopoverBody } from "reactstrap";
-import { Link } from "react-router-dom";
 
 class ChangeUserPosition extends Component {
   constructor(props) {
