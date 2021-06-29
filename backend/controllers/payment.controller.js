@@ -14,6 +14,13 @@ const addPayment = (req, res) => {
     });
   }
 
+  if (!userId) {
+    return res.status(400).json({
+      success: false,
+      message: "User Id is undefined",
+    });
+  }
+
   if (!payDate) {
     return res.status(400).json({
       success: false,
@@ -47,6 +54,7 @@ const addPayment = (req, res) => {
     });
 };
 
+//View payment of particular member
 const viewPaymentById = (req, res) => {
   Payment.findById(req.params.id)
     .then((result) => {
@@ -63,8 +71,10 @@ const viewPaymentById = (req, res) => {
     });
 };
 
+//View all the payments
 const viewAllPayments = (req, res) => {
   Payment.find({})
+    .populate("User", "fullName type")
     .then((result) => {
       res.status(200).json({
         success: true,
