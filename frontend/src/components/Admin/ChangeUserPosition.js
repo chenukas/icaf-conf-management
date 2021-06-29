@@ -47,21 +47,30 @@ class ChangeUserPosition extends Component {
       id: this.state.id,
       position: this.state.position,
     };
-
-    axios.put("http://localhost:5000/updatePosition", user).then((res) => {
-      if (res.data.success === true) {
-        window.location = "/dashboard/users";
-      }
-      if (res.data.success === false) {
-        swal({
-          title: "Wrong Registration !",
-          text: res.data.message,
-          icon: "error",
-          button: true,
-          dangerMode: true,
-        });
-      }
-    });
+    if (this.state.position == 2 || this.state.position == 3) {
+      axios.put("http://localhost:5000/updatePosition", user).then((res) => {
+        if (res.data.success === true) {
+          window.location = "/dashboard/users";
+        }
+        if (res.data.success === false) {
+          swal({
+            title: "Can not Update !",
+            text: res.data.message,
+            icon: "error",
+            button: true,
+            dangerMode: true,
+          });
+        }
+      });
+    } else {
+      swal({
+        title: "Wrong Details. ",
+        text: "Position Must be only 2 or 3",
+        icon: "error",
+        button: true,
+        dangerMode: true,
+      });
+    }
   };
 
   render() {
@@ -120,8 +129,8 @@ class ChangeUserPosition extends Component {
               target="typePopover"
             >
               <PopoverBody>
-                If Reviewer put <p style={{ fontWeight: "bold" }}>2</p>
-                If Editor put <p style={{ fontWeight: "bold" }}>3</p>
+                If Editor put <p style={{ fontWeight: "bold" }}>2</p>
+                If Reviewer put <p style={{ fontWeight: "bold" }}>3</p>
               </PopoverBody>
             </UncontrolledPopover>
           </div>

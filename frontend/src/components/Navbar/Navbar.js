@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
   const logout = (e) => {
-    console.log("hiiii");
     localStorage.removeItem("logUserId");
     localStorage.removeItem("logUserName");
   };
