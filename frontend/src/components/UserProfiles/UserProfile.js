@@ -21,7 +21,9 @@ class UserProfile extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/viewUser/" + this.props.match.params.id)
+      .get(
+        "http://localhost:5000/viewUser/" + localStorage.getItem("logUserId")
+      )
       .then((response) => {
         console.log(response.data);
         this.setState({
@@ -66,11 +68,19 @@ class UserProfile extends Component {
     }
   }
 
+  navigatePayments() {
+    window.location = "/payments";
+  }
+
   render() {
     let button;
     if (this.state.type === "RP" || this.state.type == "A") {
       button = (
-        <button type="button" class="btn btn-primary col-4">
+        <button
+          type="button"
+          class="btn btn-primary col-4"
+          onClick={this.navigatePayments}
+        >
           Go To Payment
         </button>
       );

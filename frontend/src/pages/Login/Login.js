@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auto } from "@popperjs/core";
 import axios from "axios";
 import swal from "sweetalert";
+import { yellow } from "@material-ui/core/colors";
 
 class Login extends Component {
   constructor(props) {
@@ -69,12 +70,12 @@ class Login extends Component {
     return (
       <div
         className="container"
-        style={{ width: "30%", margin: auto, marginTop: 150 }}
+        style={{ width: "30%", margin: auto, marginTop: "5%" }}
       >
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
-          style={{ backgroundColor: "#F8DE7E" }}
+          style={{ backgroundColor: "#01bf71" }}
         >
           <div className="form-group">
             <label>User Email: </label>
@@ -100,8 +101,8 @@ class Login extends Component {
               type="submit"
               value="Sign in"
               style={{
-                color: "#fff",
-                backgroundColor: "#0097A7",
+                color: "#000",
+                backgroundColor: "#F9E79F",
                 fontWeight: "bold",
                 width: "100%",
               }}
@@ -120,6 +121,7 @@ class Login extends Component {
                     fontSize: 15,
                     fontWeight: "bold",
                     textDecoration: "none",
+                    color: "#fff",
                   }}
                 >
                   Sign up here...

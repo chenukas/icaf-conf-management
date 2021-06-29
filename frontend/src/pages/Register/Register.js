@@ -102,7 +102,7 @@ class Register extends Component {
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
-          style={{ backgroundColor: "#F8DE7E" }}
+          style={{ backgroundColor: "#01bf71" }}
         >
           <div className="form-group">
             <label>Full Name: </label>
@@ -160,10 +160,21 @@ class Register extends Component {
                 <label>Password: </label>
                 <input
                   type="password"
+                  id="typePopover1"
                   className="form-control"
                   value={this.state.password}
                   onChange={this.onChangePassword}
                 />
+                <UncontrolledPopover
+                  trigger="legacy"
+                  placement="down"
+                  target="typePopover1"
+                >
+                  <PopoverBody>
+                    must include minimum 6 characters, a symbol, a number and
+                    letters
+                  </PopoverBody>
+                </UncontrolledPopover>
               </div>
             </div>
             <div className="col-6">
@@ -188,8 +199,8 @@ class Register extends Component {
                   title="Popover title"
                   data-content="And here's some amazing content. It's very engaging. Right?"
                   style={{
-                    color: "#fff",
-                    backgroundColor: "#0097A7",
+                    color: "#000",
+                    backgroundColor: "#F9E79F",
                     fontWeight: "bold",
                     width: 400,
                   }}

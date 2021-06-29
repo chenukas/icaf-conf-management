@@ -11,6 +11,7 @@ class Users extends Component {
 
     this.state = {
       users: [],
+      check: false,
     };
   }
 
@@ -29,11 +30,6 @@ class Users extends Component {
       .catch(function (error) {
         console.log(error);
       });
-    if (this.state.position === 0) {
-      this.setState({
-        positionName: "Normal User",
-      });
-    }
   }
 
   render() {
@@ -77,17 +73,11 @@ class Users extends Component {
                         ? "Research Presenter"
                         : item.type == "WP"
                         ? "Workshop Presenter"
-                        : "No Type"}
+                        : "----"}
                     </td>
                     <td>
                       {item.position == 1 ? (
-                        <Link>
-                          <img
-                            style={{ width: 25 }}
-                            src={NoEdit}
-                            alt="profile"
-                          />
-                        </Link>
+                        <img style={{ width: 25 }} src={NoEdit} alt="profile" />
                       ) : (
                         <div
                           onClick={(e) => this.navigateEditPage(e, item._id)}
