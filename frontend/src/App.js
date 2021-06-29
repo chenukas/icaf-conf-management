@@ -16,14 +16,14 @@ import ChangeUser from "./components/Admin/ChangeUserPosition";
 function App() {
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Switch>
         <Route path="/" component={Home} exact={true} />
         <Route path="/dashboard" component={withRouter(Dashboard)} />
         <Route path="/register" component={Register} exact={true} />
         <Route path="/login" component={Login} exact={true} />
         <Route path="/admin" component={AdminProfile} exact={true} />
-        <Route path="/user/:id" component={UserProfile} exact={true} />
+        <Route path="/user" component={UserProfile} exact={true} />
         <Route path="/users" component={Users} exact={true} />
         <Route path="/change-user/:id" component={ChangeUser} exact={true} />
       </Switch>

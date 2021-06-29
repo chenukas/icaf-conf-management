@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Admin from "../../images/adminProfile.png";
 import axios from "axios";
-import swal from "sweetalert";
-import { Button } from "reactstrap";
 
 class UserProfile extends Component {
   constructor(props) {

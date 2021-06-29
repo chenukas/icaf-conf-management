@@ -4,6 +4,12 @@ import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle }) => {
+  const logout = (e) => {
+    console.log("hiiii");
+    localStorage.removeItem("logUserId");
+    localStorage.removeItem("logUserName");
+  };
+
   return (
     <div className="nav">
       <div className="navbarContainer">
@@ -40,13 +46,24 @@ const Navbar = ({ toggle }) => {
             </Link>
           </div>
           <div className="navBtn">
-            <a
-              className="navBtnLink"
-              href="/login"
-              style={{ textDecoration: "none" }}
-            >
-              Sign In
-            </a>
+            {localStorage.getItem("logUserId") == null ? (
+              <a
+                className="navBtnLink"
+                href="/login"
+                style={{ textDecoration: "none" }}
+              >
+                Sign In
+              </a>
+            ) : (
+              <a
+                className="navBtnLink"
+                style={{ textDecoration: "none" }}
+                href="/"
+                onClick={logout}
+              >
+                Logout
+              </a>
+            )}
           </div>
         </div>
       </div>
