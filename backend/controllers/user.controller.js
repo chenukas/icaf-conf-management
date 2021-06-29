@@ -235,7 +235,7 @@ const userProfileByEmail = (req, res) => {
 
 const updatePositionByID = (req, res) => {
   User.findByIdAndUpdate(
-    req.body._id,
+    req.body.id,
     {
       position: req.body.position,
     },
