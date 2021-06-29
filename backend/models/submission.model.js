@@ -7,12 +7,12 @@ const submissionSchema = new Schema(
     abstract: { type: Date, require: true },
     authors: [
       {
-        type: Schema.Types.ObjectId,
+        type: /* Schema.Types.ObjectId */String,
       },
     ],
     title: { type: String, require: true },
     fileURL: { type: String, require: true },
-    status: { type: String, require: true },
+    status: { type: String, default: 'pending' },
   },
   { timestamps: true }
 );
