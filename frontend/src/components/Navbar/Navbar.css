@@ -82,6 +82,7 @@
   padding: 10px 22px;
   color: #010606;
   font-size: 16px;
+  margin-top: 15px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -94,3 +95,34 @@
   background: #fff;
   color: #010606;
 }
+
+/* .navbar{
+  background: #000000cc;
+  z-index: 10;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navItem {
+  height: 80px;
+}
+
+.navLinks {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+.navLinks:active {
+  border-bottom: 3px solid #01bf71;
+} */
+
