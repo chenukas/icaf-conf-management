@@ -12,6 +12,7 @@ import AdminProfile from "./components/UserProfiles/AdminProfile";
 import UserProfile from "./components/UserProfiles/UserProfile";
 import Users from "./components/Users/Users";
 import ChangeUser from "./components/Admin/ChangeUserPosition";
+import AddPayments from "./components/Add-Payments/add-payments";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/user" component={UserProfile} exact={true} />
         <Route path="/users" component={Users} exact={true} />
         <Route path="/change-user/:id" component={ChangeUser} exact={true} />
+        <Route path="/payments" component={AddPayments} exact={true} />
       </Switch>
     </>
   );

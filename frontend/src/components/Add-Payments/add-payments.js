@@ -7,6 +7,8 @@ const initialState = {
   userId: "",
   payDate: "",
   amount: 0.0,
+  fullName: "",
+  typeName: "",
 };
 
 class AddPayments extends Component {
@@ -19,6 +21,40 @@ class AddPayments extends Component {
 
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+  }
+
+  componentDidMount() {
+    axios
+      .get(
+        "http://localhost:5000/viewUser/" + localStorage.getItem("logUserId")
+      )
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          userId: response.data._id,
+          fullName: response.data.fullName,
+          type: response.data.type,
+        });
+        if (this.state.type === "A") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Attendee",
+          });
+        } else if (this.state.type === "WP") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Workshop Presenter",
+          });
+        } else if (this.state.type === "RP") {
+          console.log(this.state.type);
+          this.setState({
+            typeName: "Research Presenter",
+          });
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   onSubmit(event) {
@@ -48,34 +84,24 @@ class AddPayments extends Component {
           <form onSubmit={this.onSubmit}>
             <div className="mb-3">
               <label htmlFor="type" className="form-label">
-                User Title
-              </label>
-              <select
-                type="text"
-                className="form-control"
-                id="type"
-                name="type"
-                value={this.state.type}
-                onChange={this.onChange}
-              >
-                <option value="Select" hidden>
-                  Select Your Title
-                </option>
-                <option value="Researcher">Researcher</option>
-                <option value="Attendee">Attendee</option>
-              </select>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="userId" className="form-label">
-                User ID
+                User Type
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="userId"
-                name="userId"
-                value={this.state.userId}
-                onChange={this.onChange}
+                value={this.state.typeName}
+                readOnly
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="userId" className="form-label">
+                User Full Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                value={this.state.fullName}
+                readOnly
               />
             </div>
             <div className="mb-3">

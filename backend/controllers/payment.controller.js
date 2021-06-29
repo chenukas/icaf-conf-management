@@ -2,33 +2,21 @@ const Payment = require("../models/payment.model");
 const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
-  const type = req.body.type;
-  const userId = req.body.type;
-  const payDate = req.body.payDate;
-  const amount = req.body.amount;
-
-  if (!type) {
+  if (!req.body.type) {
     return res.status(400).json({
       success: false,
       message: "Type is undefined",
     });
   }
 
-  if (!userId) {
-    return res.status(400).json({
-      success: false,
-      message: "User Id is undefined",
-    });
-  }
-
-  if (!payDate) {
+  if (!req.body.payDate) {
     return res.status(400).json({
       success: false,
       message: "Date is undefined",
     });
   }
 
-  if (!amount) {
+  if (!req.body.amount) {
     return res.status(400).json({
       success: false,
       message: "Amount is undefined",
@@ -36,7 +24,8 @@ const addPayment = (req, res) => {
   }
 
   //Adding payments
-  const payment = new Payment({ type, userId, payDate, amount });
+  const payment = new Payment(req.body);
+  console.log(payment);
 
   payment
     .save()
