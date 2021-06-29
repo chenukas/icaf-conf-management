@@ -10,8 +10,8 @@ const Home = () => {
       <div className="container-fluid" style={{ padding: "0px" }}>
         <Hero />
         <AboutUs />
-        <Speakers />
         <Timeline />
+        <Speakers />
       </div>
     </>
   );

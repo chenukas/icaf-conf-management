@@ -12,7 +12,7 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 300,
     padding: 1,
     margin: 1,
     background: '#e3e3e3',
@@ -106,24 +106,19 @@ const Events = () => {
             <h2 className="events-header" >Manage Events</h2>
             <div className="add-events-container">
                 <form onSubmit={(e) => onSubmitForm(e)}>
-                    <div className="row add-event-form-row">
-                        <div className='col-12'>
+                        <div className='col-md-6 add-event-form-row'>
                             <div className="form-group">
                                 <label>Event Name: </label>
                                 <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
                             </div>
                         </div>
-                    </div>
-                    <div className="row add-event-form-row">
-                        <div className='col-12'>
+                        <div className='col-md-8 add-event-form-row'>
                             <div className="form-group">
                                 <label>Description: </label>
                                 <textarea type="text" className="form-control" value={description} onChange={(e) => setDescription(e.target.value) } />
                             </div>
                         </div>
-                    </div>
-                    <div className="row add-event-form-row">
-                        <div className="col-md-12">
+                        <div className="col-md-6 add-event-form-row">
                             <div className="form-group">
                                 <TextField id="datetime-local" 
                                 label="Start Date & Time" 
@@ -136,9 +131,7 @@ const Events = () => {
                                 }} />
                             </div>
                         </div>
-                    </div>
-                    <div className='row add-event-form-row'>
-                        <div className="col-md-12">
+                        <div className="col-md-6 add-event-form-row">
                             <div className="form-group">
                                 <TextField
                                 id="datetime-local"
@@ -152,9 +145,7 @@ const Events = () => {
                                 }} />
                             </div>
                         </div>
-                    </div>
-                    <div className='row add-event-form-row'>
-                        <div className='col-12'>
+                        <div className='col-md-6 add-event-form-row'>
                             <div className="form-group">
                                 <label>Venue: </label>
                                 <select type="text" className="form-control" value={venue} onChange={(e) => setVenue(e.target.value)}>
@@ -165,7 +156,6 @@ const Events = () => {
                                 </select>
                             </div>
                         </div>
-                    </div>
                     <div className='row add-event-form-row'>
                         <div className='col-12'>
                             <div className="form-group">

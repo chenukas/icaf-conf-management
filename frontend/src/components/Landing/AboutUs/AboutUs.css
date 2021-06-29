@@ -23,3 +23,13 @@
   color: #ffffff;
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .aboutP {
+    font-size: 13px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
