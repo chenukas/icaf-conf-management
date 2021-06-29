@@ -72,6 +72,23 @@ const viewSubmissionById = (req, res) => {
     });
 };
 
+const approveSubmissionById = (req, res) => {
+    Submission.findByIdAndUpdate(req.params.id, {
+        status: 'approved'
+    }, { new: true }).then((result) => {
+        res.status(200).json({
+          success: true,
+          data: result,
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: err.message,
+        });
+    });
+}
+
 const deleteSubmissionById = (req, res) => {
   Submission.findByIdAndDelete(req.params.id)
     .then(() => {
@@ -91,5 +108,11 @@ module.exports = {
   addSubmission,
   getSubmissions,
   viewSubmissionById,
+  approveSubmissionById,
   deleteSubmissionById
 };
+
+    
+
+
+

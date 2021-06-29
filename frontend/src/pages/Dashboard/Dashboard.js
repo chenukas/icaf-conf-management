@@ -5,7 +5,6 @@ import Overview from "../../components/Overview/Overview";
 import Users from "../../components/Users/Users";
 import Publications from "../../components/Publications/Publications";
 import Payments from "../../components/Payments/Payments";
-import Navbar from "../../components/Navbar/Navbar";
 import Events from '../../components/Events/Events'
 import "./Dashboard.css";
 
@@ -13,7 +12,6 @@ const Dashboard = () => {
   const match = useRouteMatch();
   return (
     <div>
-      <Navbar />
       <div className="dashboard">
         <div>
           <Sidenav />
