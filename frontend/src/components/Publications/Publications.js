@@ -55,7 +55,7 @@ const approvePublication = (id) => {
                    <td>{item.abstract}</td>
                    <td>{item.authors}</td>
                    <td>{item.createdAt}</td>
-                   <td><span className={item.status == 'approved' ? "badge badge-success" : "badge badge-warning" }>{item.status}</span></td>
+                   <td><span className={item.status == 'approved' ? "badge bg-success" : "badge bg-warning" }>{item.status}</span></td>
                    <td><button className={item.status == 'approved' ? "approve-button-disabled" : "approve-button" } disabled={item.status == 'approved'} onClick={() => approvePublication(item._id)}>Approve</button></td>
                   </tr>
                 ))}

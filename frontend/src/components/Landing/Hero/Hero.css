@@ -8,17 +8,7 @@
   width: 100vw;
   position: relative;
   z-index: 1;
-}
-
-.heroBg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  text-align: center;
 }
 
 .image {
@@ -41,13 +31,38 @@
 .heroH1 {
   font-size: 48px;
 }
-/* 
+
 @media screen and (max-width: 768px) {
+  .heroContainer {
+    margin-bottom: 60px;
+  }
+
+  .image {
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    width: 50vw;
+  }
+
   .heroH1 {
-    font-size: 40px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .a1{
+    color: #010606;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 70px;
   }
 }
 
+.a1{
+  color: #010606;
+  margin-right: 70px;
+}
+/* 
 @media screen and (max-width: 480) {
   .heroH1 {
     font-size: 32px;
@@ -103,9 +118,4 @@
   transition: all 0.2s ease-in-out;
   background: #010606;
   color: #fff;
-}
-
-.a1{
-  color: #010606;
-  text-align: center;
 }
