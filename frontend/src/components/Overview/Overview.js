@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useCallback} from "react";
 import "./Overview.css";
-import Grid from '@material-ui/core/Grid'
 import axios from "axios";
 
 const Overview = () => {
@@ -24,24 +23,26 @@ const Overview = () => {
     <div className="overview-container">
       <h2 className="overview-header">Overview</h2>
       <div className="overview-container-grid">
-      <Grid container spacing={5}>
-        <Grid item xs={10} sm={6} className="grid-item">
+        <div className="row">
+          <div className="col-md-6 grid-item grid-item-top-left">
           <h3 className="stats-text">Events</h3>
           <h4 className="stats-value">{ stats.totalEvents }</h4>
-        </Grid>
-        <Grid item xs={10} sm={6} className="grid-item">
-        <h3 className="stats-text">Participants</h3>
+          </div>
+          <div className="col-md-6 grid-item grid-item-top-right" >
+          <h3 className="stats-text">Participants</h3>
         <h4 className="stats-value">{ stats.totalParticipants }</h4>
-        </Grid>
-        <Grid item xs={10} sm={6} className="grid-item">
-        <h3 className="stats-text">Publications</h3>
-        <h4 className="stats-value">{ stats.totalSubmissions }</h4>
-        </Grid>
-        <Grid item xs={10} sm={6} className="grid-item">
-        <h3 className="stats-text">Payments</h3>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6 grid-item grid-item-bottom-left">
+          <h3 className="stats-text">Publications</h3>
+          <h4 className="stats-value">{ stats.totalSubmissions }</h4>
+          </div>
+          <div className="col-md-6 grid-item grid-item-bottom-right" >
+          <h3 className="stats-text">Payments</h3>
         <h4 className="stats-value">Rs. { stats.totalPayments }</h4>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
       </div>
     </div>
   );

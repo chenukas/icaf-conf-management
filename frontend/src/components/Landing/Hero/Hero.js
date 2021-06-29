@@ -16,13 +16,13 @@ const Hero = () => {
           <img className="image" src={lady} alt="listening to a conference" />
         </div>
       </div>
-      <div className="col a1" style={{ marginRight: "70px" }}>
+      <div className="col a1">
         <div className="heroH1 ">
-          International Conference on Application Frameworks
+          <p>International Conference on Application Frameworks</p>
         </div>
-        <div className="heroP " >
-          1st, 2nd, and 3rd July 2021
-          <p>Sri Lanka Institute of Information Technology</p>
+        <div className="heroP" >
+          <p>1st, 2nd, and 3rd July 2021 <br/>
+          Sri Lanka Institute of Information Technology</p>
         </div>
         <div className="heroBtnWrapper">
           <button type="button" className="button">

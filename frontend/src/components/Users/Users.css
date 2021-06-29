@@ -17,3 +17,9 @@
   width: "100%";
   background-color: #01bf71;
 }
+
+@media (max-width: 768px) {
+  .user-table {
+    padding-right: 2em;
+  }
+}
