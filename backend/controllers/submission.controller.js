@@ -1,5 +1,11 @@
 const Submission = require("../models/submission.model");
 
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 const addSubmission = (req, res) => {
   if (!req.body.title) {
     return res.status(400).json({
@@ -40,6 +46,11 @@ const addSubmission = (req, res) => {
     });
 };
 
+/**
+ *
+ * @param req
+ * @param res
+ */
 const getSubmissions = (req, res) => {
   Submission.find({})
     .then((result) => {
@@ -56,6 +67,11 @@ const getSubmissions = (req, res) => {
     });
 };
 
+/**
+ *
+ * @param req
+ * @param res
+ */
 const viewSubmissionById = (req, res) => {
   Submission.findById(req.params.id)
     .then((res) => {
@@ -72,6 +88,11 @@ const viewSubmissionById = (req, res) => {
     });
 };
 
+/**
+ *
+ * @param req
+ * @param res
+ */
 const approveSubmissionById = (req, res) => {
     Submission.findByIdAndUpdate(req.params.id, {
         status: 'approved'
@@ -89,6 +110,11 @@ const approveSubmissionById = (req, res) => {
     });
 }
 
+/**
+ *
+ * @param req
+ * @param res
+ */
 const deleteSubmissionById = (req, res) => {
   Submission.findByIdAndDelete(req.params.id)
     .then(() => {
@@ -112,7 +138,7 @@ module.exports = {
   deleteSubmissionById
 };
 
-    
+
 
 
 
