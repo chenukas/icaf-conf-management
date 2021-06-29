@@ -30,14 +30,14 @@ const Navbar = ({ toggle }) => {
             </p>
           </div>
           <div className="navItem">
-            <Link to="/" style={{ textDecoration: 'none'}}>
+            <Link to="/submission" style={{ textDecoration: 'none'}}>
             <p className="navLinks" to="">
               Submissions
             </p>
             </Link>
           </div>
           <div className="navItem">
-          <Link to="/" style={{ textDecoration: 'none'}}>
+          <Link to="/download" style={{ textDecoration: 'none'}}>
             <p className="navLinks" to="">
               Downloads
             </p>
