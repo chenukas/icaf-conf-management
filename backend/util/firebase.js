@@ -8,11 +8,15 @@ admin.initializeApp({
     storageBucket: process.env.BUCKET_URL
 });
 
+/**
+ * Upload file to firebase storage
+ * @param file - file to be uploaded
+ */
 const uploadFileToFirebaseStorage = file => {
     const bucket = admin.storage().bucket(process.env.BUCKET_URL);
-    const name = saltedMd5(file.originalname, 'SUPER-S@LT!')
+    // create unique name
+    const name = saltedMd5(file.originalname, '1wqsadzx@31');
     const fileName = name + path.extname(file.originalname);
-    console.log(file);
     return bucket.file(fileName).createWriteStream().end(file.buffer);
 }
 
