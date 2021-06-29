@@ -39,23 +39,19 @@ class Login extends Component {
 
     axios.post("http://localhost:5000/login", user).then((res) => {
       if (res.data.success === true) {
-        swal({
-          title: "Login Successfully..!!",
-          text: "You are Successfully Logged.",
-          icon: "success",
-          button: true,
-        }).then(() => {
-          this.setState({
-            email: "",
-            password: "",
-          });
-          console.log(res.data.user._id);
-          if (res.data.user.position == 1) {
-            window.location = "/dashboard";
-          } else {
-            window.location = "/user/" + res.data.user._id;
-          }
+        this.setState({
+          email: "",
+          password: "",
         });
+        const id = res.data.user._id;
+        const name = res.data.user.fullName;
+        localStorage.setItem("logUserId", id);
+        localStorage.setItem("logUserName", name);
+        if (res.data.user.position == 1) {
+          window.location = "/dashboard";
+        } else {
+          window.location = "/user";
+        }
       }
       if (res.data.success === false) {
         swal({

@@ -72,24 +72,17 @@ class Register extends Component {
 
     axios.post("http://localhost:5000/register", user).then((res) => {
       if (res.data.success === true) {
-        swal({
-          title: "Registration Completed..!!",
-          text: "You are Successfully Registered.",
-          icon: "success",
-          button: true,
-        }).then(() => {
-          this.setState({
-            fname: "",
-            lname: "",
-            email: "",
-            address: "",
-            postal: "",
-            country: "",
-            password: "",
-            confirmPassword: "",
-          });
-          window.location = "/login";
+        this.setState({
+          fname: "",
+          lname: "",
+          email: "",
+          address: "",
+          postal: "",
+          country: "",
+          password: "",
+          confirmPassword: "",
         });
+        window.location = "/login";
       }
       if (res.data.success === false) {
         swal({
