@@ -13,6 +13,9 @@ import UserProfile from "./components/UserProfiles/UserProfile";
 import Users from "./components/Users/Users";
 import ChangeUser from "./components/Admin/ChangeUserPosition";
 import AddPayments from "./components/Add-Payments/add-payments";
+import Download from "./components/Downloads/Download";
+import Submissions from "./components/Submissions/Submissions";
+import AddSubmission from "./components/AddSubmission/AddSubmission";
 
 function App() {
   return (
@@ -28,6 +31,10 @@ function App() {
         <Route path="/users" component={Users} exact={true} />
         <Route path="/change-user/:id" component={ChangeUser} exact={true} />
         <Route path="/payments" component={AddPayments} exact={true} />
+        <Route path="/download" component={Download} exact={true} />
+        <Route path="/submission" component={Submissions} exact={true} />
+        <Route path="/addsubmission" component={AddSubmission} exact={true} />
+      
       </Switch>
     </>
   );

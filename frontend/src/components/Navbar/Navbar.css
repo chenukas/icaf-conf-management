@@ -98,6 +98,11 @@
   text-decoration: none;
 }
 
+.navBtnLink:hover {
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: #010606;
+}
 .navBtn:hover {
   background: #116843;
   color: #fff;
