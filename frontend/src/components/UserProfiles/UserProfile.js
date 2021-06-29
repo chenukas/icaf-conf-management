@@ -21,7 +21,9 @@ class UserProfile extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/viewUser/" + this.props.match.params.id)
+      .get(
+        "http://localhost:5000/viewUser/" + localStorage.getItem("logUserId")
+      )
       .then((response) => {
         console.log(response.data);
         this.setState({
