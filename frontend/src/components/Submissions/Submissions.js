@@ -48,7 +48,8 @@ const Submissions = () => {
     return (
         <div className="container mt-5">
             <Link to="/addsubmission" style={{textDecoration: 'none'}}>
-                <button type="button" class="btn btn-dark mb-5">Add Submission</button>
+                <button type="button" class="btn btn-dark mb-5"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;
+Add Submission</button>
             </Link>
 
             <div className="row">
