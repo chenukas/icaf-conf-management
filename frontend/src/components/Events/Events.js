@@ -89,8 +89,6 @@ const Events = () => {
     }
 
     const onDeleteEvent = (id) => {
-        console.log(id)
-        debugger
         axios({
             method: 'DELETE',
             url: `http://localhost:5000/events/${id}`
