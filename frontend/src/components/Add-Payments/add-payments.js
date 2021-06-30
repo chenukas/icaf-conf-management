@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./add-payment.css";
+import swal from "sweetalert";
 
 const initialState = {
   type: "",
@@ -61,7 +62,7 @@ class AddPayments extends Component {
   onSubmit(event) {
     event.preventDefault();
     let payment = {
-      type: this.state.type,
+      type: this.state.typeName,
       userId: this.state.userId,
       name: this.state.fullName,
       payDate: this.state.payDate,
@@ -70,7 +71,15 @@ class AddPayments extends Component {
     axios
       .post("http://localhost:5000/payments", payment)
       .then((res) => {
-        alert("New Payment Is Done Successfully");
+        if (res.data.success === true) {
+          swal({
+            title: "New Payment is Successfull!",
+            text: res.data.message,
+            icon: "success",
+            button: true,
+            dangerMode: false,
+          });
+        }
       })
       .catch((error) => {
         console.log(error.message);
