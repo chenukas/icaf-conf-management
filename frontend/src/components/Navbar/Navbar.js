@@ -29,13 +29,17 @@ const Navbar = ({ toggle }) => {
               About
             </p>
           </div>
-          <div className="navItem">
-            <Link to="/submission" style={{ textDecoration: 'none'}}>
-            <p className="navLinks" to="">
-              Submissions
-            </p>
-            </Link>
-          </div>
+          {
+            localStorage.getItem("logUserId") !== null ? (
+                <div className="navItem">
+                  <Link to="/submission" style={{ textDecoration: 'none'}}>
+                    <p className="navLinks" to="">
+                      Submissions
+                    </p>
+                  </Link>
+                </div>
+            ) : <></>
+          }
           <div className="navItem">
           <Link to="/download" style={{ textDecoration: 'none'}}>
             <p className="navLinks" to="">
@@ -43,14 +47,18 @@ const Navbar = ({ toggle }) => {
             </p>
           </Link>
           </div>
-          <div className="navItem">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/register"
-            >
-              <p className="navLinks">Sign Up</p>
-            </Link>
-          </div>
+          {
+            localStorage.getItem("logUserId") == null ? (
+                <div className="navItem">
+                  <Link
+                      style={{ textDecoration: "none" }}
+                      to="/register"
+                  >
+                    <p className="navLinks">Sign Up</p>
+                  </Link>
+                </div>
+            ) : <></>
+          }
           <div className="navItem">
           {localStorage.getItem("logUserId") == null ? (
             <Link
