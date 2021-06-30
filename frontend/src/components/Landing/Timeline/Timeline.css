@@ -19,3 +19,6 @@
   font-size: medium;
 }
 
+.vertical-timeline-element--work {
+  cursor: pointer;
+}
