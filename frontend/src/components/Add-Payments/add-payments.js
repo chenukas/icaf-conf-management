@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./add-payment.css";
+import swal from "sweetalert";
 
 const initialState = {
   type: "",
@@ -61,7 +62,7 @@ class AddPayments extends Component {
   onSubmit(event) {
     event.preventDefault();
     let payment = {
-      type: this.state.type,
+      type: this.state.typeName,
       userId: this.state.userId,
       name: this.state.fullName,
       payDate: this.state.payDate,
