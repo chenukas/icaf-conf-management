@@ -132,30 +132,31 @@ class Register extends Component {
           </div>
           <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>User Type: </label>
-            <input
+            <select
               type="text"
-              id="typePopover"
               className="form-control"
+              id="type"
+              name="type"
               value={this.state.type}
               onChange={this.onChangeType}
-            />
-            <UncontrolledPopover
-              trigger="legacy"
-              placement="right"
-              target="typePopover"
             >
-              <PopoverBody>
-                Are you Research Presenter put{" "}
-                <p style={{ fontWeight: "bold" }}>RP</p>
-                Are you Workshop Presenter put{" "}
-                <p style={{ fontWeight: "bold" }}>WP</p>
-                Are you Attendee put <p style={{ fontWeight: "bold" }}>A</p>
-              </PopoverBody>
-            </UncontrolledPopover>
+              <option value="Select" hidden>
+                Select User Type
+              </option>
+              <option value="RP" style={{ color: "#000" }}>
+                Research Presenter
+              </option>
+              <option value="A" style={{ color: "#000" }}>
+                Attendee
+              </option>
+              <option value="WP" style={{ color: "#000" }}>
+                Workshop Presenter
+              </option>
+            </select>
           </div>
           <div className="row" style={{ marginTop: "5%", color: "#000"}}>
             <div className="col-6">
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: "5%" }}>
                 <label>Password: </label>
                 <input
                   type="password"
@@ -177,7 +178,7 @@ class Register extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: "5%" }}>
                 <label>Confirm Password: </label>
                 <input
                   type="password"

@@ -8,6 +8,8 @@ const Navbar = ({ toggle }) => {
   const logout = (e) => {
     localStorage.removeItem("logUserId");
     localStorage.removeItem("logUserName");
+    localStorage.removeItem("logUserPosition");
+    localStorage.removeItem("logUserType");
     window.location = "/";
   };
 
@@ -31,13 +33,15 @@ const Navbar = ({ toggle }) => {
             </p>
             </Link>
           </div>
-          <div className="navItem">
-            <Link to="/submission" style={{ textDecoration: "none" }}>
-              <p className="navLinks" to="">
-                Submissions
-              </p>
-            </Link>
-          </div>
+          {localStorage.getItem("logUserType") == "RP" ? (
+            <div className="navItem">
+              <Link to="/submission" style={{ textDecoration: "none" }}>
+                <p className="navLinks" to="">
+                  Submissions
+                </p>
+              </Link>
+            </div>
+          ) : null}
           <div className="navItem">
             <Link to="/download" style={{ textDecoration: "none" }}>
               <p className="navLinks" to="">
