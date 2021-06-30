@@ -31,13 +31,19 @@ const Navbar = ({ toggle }) => {
             </p>
             </Link>
           </div>
-          <div className="navItem">
-            <Link to="/submission" style={{ textDecoration: "none" }}>
-              <p className="navLinks" to="">
-                Submissions
-              </p>
-            </Link>
-          </div>
+        
+          
+        {
+            localStorage.getItem("logUserId") !== null ? (
+                <div className="navItem">
+                  <Link to="/submission" style={{ textDecoration: 'none'}}>
+                    <p className="navLinks" to="">
+                      Submissions
+                    </p>
+                  </Link>
+                </div>
+            ) : <></>
+          }
           <div className="navItem">
             <Link to="/download" style={{ textDecoration: "none" }}>
               <p className="navLinks" to="">

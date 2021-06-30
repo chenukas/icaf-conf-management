@@ -15,7 +15,7 @@
   height: auto;
   margin: 20px;
   padding: 20px;
-  width: 30vw;
+  width: 40vw;
 }
 
 .heroContent {
@@ -30,6 +30,8 @@
 
 .heroH1 {
   font-size: 48px;
+  align-items: center;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
@@ -73,6 +75,7 @@
   margin-top: 24px;
   font-size: 24px;
   max-width: 600px;
+  align-items: center;
 }
 /* 
 @media screen and (max-width: 768px) {
