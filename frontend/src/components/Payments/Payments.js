@@ -40,7 +40,7 @@ class Payments extends Component {
                   <tr key={index}>
                     <td>{item.userId.fullName}</td>
                     <td>{item.type}</td>
-                    <td>{item.amount}</td>
+                    <td>Rs.{item.amount}.00</td>
                   </tr>
                 ))}
             </tbody>
