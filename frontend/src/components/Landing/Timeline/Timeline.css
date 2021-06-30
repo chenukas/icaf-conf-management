@@ -1,5 +1,8 @@
 .timeline-container {
   margin-top: 2em;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
 }
 
 .timeline-header {
@@ -15,3 +18,4 @@
   color: #a1a1a1;
   font-size: medium;
 }
+
