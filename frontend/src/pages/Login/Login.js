@@ -70,14 +70,14 @@ class Login extends Component {
     return (
       <div
         className="container"
-        style={{ width: "30%", margin: auto, marginTop: "5%" }}
+        style={{ width: "30%", margin: auto, marginTop: "5%", backgroundColor: "#01bf71" }}
       >
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
           style={{ backgroundColor: "#01bf71" }}
         >
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>User Email: </label>
             <input
               type="email"
@@ -86,7 +86,7 @@ class Login extends Component {
               onChange={this.onChangeEmail}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>Password: </label>
             <input
               type="password"
@@ -96,7 +96,7 @@ class Login extends Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%"}}>
             <input
               type="submit"
               value="Sign in"
@@ -110,9 +110,9 @@ class Login extends Component {
             />
           </div>
           <div>
-            <div className="row">
+            <div className="row" style={{marginTop: "5%"}}>
               <div className="col-6">
-                <p>Don't have an account?</p>
+                <p style={{color: "#000"}}>Don't have an account?</p>
               </div>
               <div className="col-6">
                 <Link

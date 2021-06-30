@@ -98,13 +98,12 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container" style={{ width: "75%", marginTop: 50 }}>
+      <div className="container" style={{ width: "75%", marginTop: 50, backgroundColor: "#01bf71" }}>
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
-          style={{ backgroundColor: "#01bf71" }}
         >
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}> 
             <label>Full Name: </label>
             <input
               type="text"
@@ -113,7 +112,7 @@ class Register extends Component {
               onChange={this.onChangeUserName}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>Email: </label>
             <input
               type="email"
@@ -122,7 +121,7 @@ class Register extends Component {
               onChange={this.onChangeEmail}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>Contact Number: </label>
             <input
               type="text"
@@ -131,7 +130,7 @@ class Register extends Component {
               onChange={this.onChangeContactNumber}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
             <label>User Type: </label>
             <input
               type="text"
@@ -154,7 +153,7 @@ class Register extends Component {
               </PopoverBody>
             </UncontrolledPopover>
           </div>
-          <div className="row">
+          <div className="row" style={{ marginTop: "5%", color: "#000"}}>
             <div className="col-6">
               <div className="form-group">
                 <label>Password: </label>
@@ -189,7 +188,7 @@ class Register extends Component {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row" style={{ marginTop: "5%", color: "#000"}}>
             <div className="col-12">
               <div className="form-group">
                 <input
@@ -202,7 +201,7 @@ class Register extends Component {
                     color: "#000",
                     backgroundColor: "#F9E79F",
                     fontWeight: "bold",
-                    width: 400,
+                    width: "100%",
                   }}
                   className="btn"
                 />
