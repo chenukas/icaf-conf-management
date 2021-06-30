@@ -15,7 +15,6 @@ class Payments extends Component {
       .get("http://localhost:5000/payments")
       .then((res) => {
         this.setState({ payments: res.data.data });
-        console.log("DATA", res.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -24,9 +23,9 @@ class Payments extends Component {
 
   render() {
     return (
-      <div className="table-container">
-        <h2 className="header"> Payment </h2>
-        <div className="container">
+      <div className="payment-container">
+        <h2 className="payment-header">Payment</h2>
+        <div className="payment-table">
           <table className="table">
             <thead>
               <tr>
@@ -38,8 +37,8 @@ class Payments extends Component {
             <tbody>
               {this.state.payments.length > 0 &&
                 this.state.payments.map((item, index) => (
-                  <tr>
-                    <td>{item.userId}</td>
+                  <tr key={index}>
+                    <td>{item.userId.fullName}</td>
                     <td>{item.type}</td>
                     <td>{item.amount}</td>
                   </tr>

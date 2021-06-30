@@ -4,8 +4,7 @@ import "./AddSubmission.css";
 const AddSubmission = () => {
   const [title, setTitle] = useState('');
   const [abstract, setAbstract] = useState([]);
-  const [authors, setAuthors] = useState('');
-  const [file, setFile] = useState('');
+  const [authors, setAuthors] = useState('')
 
   const handleTitleChange = e => setTitle(e.target.value);
 

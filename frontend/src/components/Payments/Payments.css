@@ -1,10 +1,12 @@
-.table-container {
-  width: 1000px;
-  padding-left: 10em;
-  padding-bottom: 6em;
+.payment-container {
+  width: 100%;
 }
 
-.header {
+.payment-header {
   color: #01bf71;
   padding-left: 1em;
+}
+
+.payment-table {
+  padding-bottom: 50vh;
 }
