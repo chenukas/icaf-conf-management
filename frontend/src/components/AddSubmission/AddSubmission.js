@@ -77,7 +77,7 @@ const AddSubmission = () => {
     }
 
     return (
-        <div className="containersub" style={{marginTop: '20px'}}>
+        <div className="container" style={{marginTop: '20px'}}>
             <form>
                 <div className="row">
                     <h4>Add new Submission</h4>
