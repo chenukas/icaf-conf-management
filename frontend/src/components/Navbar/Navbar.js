@@ -27,10 +27,8 @@ const Navbar = ({ toggle }) => {
         </div>
         <div className="navMenu">
           <div className="navItem">
-          <Link to="/" style={{ textDecoration: 'none'}}>
-            <p className="navLinks">
-              About
-            </p>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <p className="navLinks">About</p>
             </Link>
           </div>
           {localStorage.getItem("logUserType") == "RP" ? (
