@@ -20,9 +20,11 @@ const Hero = () => {
         <div className="heroH1 ">
           <p>International Conference on Application Frameworks</p>
         </div>
-        <div className="heroP" >
-          <p>1st, 2nd, and 3rd July 2021 <br/>
-          Sri Lanka Institute of Information Technology</p>
+        <div className="heroP">
+          <p>
+            1st, 2nd, and 3rd July 2021 <br />
+            Sri Lanka Institute of Information Technology
+          </p>
         </div>
         <div className="heroBtnWrapper">
           <button type="button" className="button">
