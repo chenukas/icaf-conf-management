@@ -1,11 +1,38 @@
 .heroContainer2 {
   background: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   width: 100%;
 }
 
 .speakerH2 {
-    color: #ffffff;
-    text-align: center;
-    margin-top: 5px;
-  }
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.image2 {
+  border-radius: 50%;
+  width: 250px;
+  margin: auto;
+  padding: 5px;
+  border: 5px solid #01bf71;
+  margin-bottom: 25px;
+}
+
+.image3 {
+  border-radius: 50%;
+  width: 250px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  /* padding: 10px; */
+  border: 5px solid #01bf71;
+}
+
+.image4 {
+  text-align: center;
+}
+

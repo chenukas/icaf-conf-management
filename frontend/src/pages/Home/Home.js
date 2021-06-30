@@ -3,6 +3,7 @@ import Hero from "../../components/Landing/Hero/Hero";
 import Timeline from "../../components/Landing/Timeline/Timeline";
 import AboutUs from "../../components/Landing/AboutUs/AboutUs";
 import Speakers from "../../components/Landing/Speakers/Speakers";
+import Footer from "../../components/Landing/Footer/Footer";
 
 const Home = () => {
   return (
@@ -10,8 +11,9 @@ const Home = () => {
       <div className="container-fluid" style={{ padding: "0px" }}>
         <Hero />
         <AboutUs />
-        <Timeline />
         <Speakers />
+        <Timeline />
+        <Footer />
       </div>
     </>
   );
