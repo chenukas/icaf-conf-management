@@ -43,14 +43,19 @@ const Navbar = ({ toggle }) => {
             </p>
           </Link>
           </div>
-          <div className="navItem">
+          {localStorage.getItem("logUserId") == null ? (<div className="navItem">
             <Link
               style={{ textDecoration: "none" }}
               to="/register"
             >
               <p className="navLinks">Sign Up</p>
-            </Link>
-          </div>
+            </Link></div>) : (
+            <div className="navItem"><Link
+              style={{ textDecoration: "none" }}
+              to="/user"
+            >
+              <p className="navLinks">Profile</p>
+            </Link></div>) }
           <div className="navItem">
           {localStorage.getItem("logUserId") == null ? (
             <Link
