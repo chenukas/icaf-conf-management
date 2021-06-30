@@ -1,17 +1,10 @@
-.payment-container {
-  width: 500px;
-  padding-left: 1em;
+.table-container {
+  width: 1000px;
+  padding-left: 10em;
   padding-bottom: 6em;
 }
 
-.title {
+.header {
   color: #01bf71;
-  padding-left: 0.5em;
-}
-
-.btn {
-  background-color: #01bf71;
-  border-radius: 00.2em;
-  color: #ffffff;
-  font-weight: bold;
+  padding-left: 1em;
 }
