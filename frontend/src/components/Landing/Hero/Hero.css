@@ -20,7 +20,6 @@
 
 .heroContent {
   z-index: 3;
-  max-width: 1200px;
   position: absolute;
   padding: 8px, 24px;
   display: flex;
@@ -64,7 +63,7 @@
   color: #010606;
   margin-right: 70px;
 }
-/* 
+/*
 @media screen and (max-width: 480) {
   .heroH1 {
     font-size: 32px;
@@ -74,10 +73,9 @@
 .heroP {
   margin-top: 24px;
   font-size: 24px;
-  max-width: 600px;
   align-items: center;
 }
-/* 
+/*
 @media screen and (max-width: 768px) {
   .heroP {
     font-size: 24px;
