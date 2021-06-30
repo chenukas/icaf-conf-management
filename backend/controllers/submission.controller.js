@@ -2,7 +2,8 @@ const Submission = require("../models/submission.model");
 const submissionService = require("../services/submission.service");
 
 /**
- *
+ * Create submission
+ * POST /submissions
  * @param req
  * @param res
  * @returns {*}
@@ -51,11 +52,11 @@ const addSubmission = (req, res) => {
                 data: result,
             });
         }).catch((err) => {
-        res.status(500).json({
-            success: false,
-            message: err.message,
+            res.status(500).json({
+                success: false,
+                message: err.message,
+            });
         });
-    });
 };
 
 /**
@@ -65,7 +66,7 @@ const addSubmission = (req, res) => {
  */
 const getSubmissions = (req, res) => {
     Submission.find({})
-    .populate('uid')
+        .populate('uid')
         .then((result) => {
             res.status(200).json({
                 success: true,
@@ -102,6 +103,23 @@ const viewSubmissionById = (req, res) => {
 };
 
 /**
+ * Get submissions by UID
+ * GET /users/{uid}/submissions
+ * @param {*} req 
+ * @param {*} res 
+ */
+const getSubmissionsByUID = (req, res) => {
+    submissionService.getSubmissionsByUID(req.params.uid)
+        .then(
+            result => res.status(200)
+                .json({ success: true, data: result })
+        ).catch(
+            err => res.status(500)
+            .json({ success: false, error: err.message })
+        );
+}
+
+/**
  *
  * @param req
  * @param res
@@ -109,7 +127,7 @@ const viewSubmissionById = (req, res) => {
 const approveSubmissionById = (req, res) => {
     Submission.findByIdAndUpdate(req.params.id, {
         status: 'approved'
-    }, {new: true}).then((result) => {
+    }, { new: true }).then((result) => {
         res.status(200).json({
             success: true,
             data: result,
@@ -146,6 +164,7 @@ const deleteSubmissionById = (req, res) => {
 module.exports = {
     addSubmission,
     getSubmissions,
+    getSubmissionsByUID,
     viewSubmissionById,
     approveSubmissionById,
     deleteSubmissionById

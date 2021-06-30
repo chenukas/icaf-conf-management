@@ -16,7 +16,7 @@ const Hero = () => {
           <img className="image" src={lady} alt="listening to a conference" />
         </div>
       </div>
-      <div className="col a1">
+      <div className="col a1 text-center">
         <div className="heroH1 ">
           <p>International Conference on Application Frameworks</p>
         </div>

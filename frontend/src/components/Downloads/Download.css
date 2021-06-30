@@ -1,0 +1,25 @@
+.admission {
+    background: #ffffff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 0px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 #7c6c6c33;
+    padding-bottom: 20px;
+  }
+
+.container{
+    width: 60%;
+}
+
+.download{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #202020;
+}
+.download:hover{
+    background-color: #000000;
+}
+.download:active{
+    color: #ffffff;
+}
