@@ -59,7 +59,7 @@ class AdminProfile extends Component {
               <button
                 style={{ fontWeight: "bolder" }}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 onClick={this.navigationToChange}
               >
                 Change User Position

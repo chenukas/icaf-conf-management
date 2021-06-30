@@ -78,7 +78,7 @@ class UserProfile extends Component {
       button = (
         <button
           type="button"
-          class="btn btn-primary col-4"
+          className="btn btn-primary col-4"
           onClick={this.navigatePayments}
         >
           Go To Payment

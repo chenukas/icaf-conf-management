@@ -24,10 +24,12 @@ const Navbar = ({ toggle }) => {
           <DehazeIcon fontSize='large'  onClick={toggle}/>
         </div>
         <div className="navMenu">
-          <div className="navItem"  href="#about">
+          <div className="navItem">
+          <Link to="/" style={{ textDecoration: 'none'}}>
             <p className="navLinks">
               About
             </p>
+            </Link>
           </div>
           <div className="navItem">
             <Link to="/submission" style={{ textDecoration: 'none'}}>
