@@ -148,16 +148,17 @@ const Events = () => {
                         <div className='col-md-6 add-event-form-row'>
                             <div className="form-group">
                                 <label>Venue: </label>
-                                <select type="text" className="form-control" value={venue} onChange={(e) => setVenue(e.target.value)}>
-                                <option value='Select' hidden>Select</option>
-                                <option value='SLIIT Auditorium'>SLIIT Auditorium</option>
-                                <option value='SLIIT Mini Auditorium'>SLIIT Mini Auditorium</option>
-                                <option value='Dialog Axiata Auditorium'>Dialog Axiata Auditorium</option>
+                                <select className="form-select" value={venue} onChange={(e) => setVenue(e.target.value)} style={{color: '#000'}} aria-label="Default select example">
+                                <option value='Select' hidden className="form-select-option">Select</option>
+                                <option value='SLIIT Auditorium' className="form-select-option">SLIIT Auditorium</option>
+                                <option value='SLIIT Mini Auditorium' className="form-select-option">SLIIT Mini Auditorium</option>
+                                <option value='Dialog Axiata Auditorium' className="form-select-option">Dialog Axiata Auditorium</option>
                                 </select>
                             </div>
                         </div>
-                    <div className='row add-event-form-row'>
-                        <div className='col-12'>
+                        <br/>
+                        <br/>
+                        <div className='submit-button'>
                             <div className="form-group">
                                 <input
                                 type="submit"
@@ -170,7 +171,6 @@ const Events = () => {
                                 className="btn" />
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
                 <div className="event-cards-container">

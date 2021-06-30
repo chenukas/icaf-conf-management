@@ -78,7 +78,7 @@ class UserProfile extends Component {
       button = (
         <button
           type="button"
-          class="btn btn-primary col-4"
+          className="btn btn-primary col-4"
           onClick={this.navigatePayments}
         >
           Go To Payment
@@ -86,14 +86,11 @@ class UserProfile extends Component {
       );
     }
     return (
-      <div
-        className="container"
-        style={{ width: "75%", marginTop: 50, marginLeft: 350 }}
-      >
+      <div style={{ marginTop: 50, marginLeft: 350 }}>
         <div className="row">
           <div className="col-3">
             <div>
-              <img style={{ width: 280 }} src={Admin} alt="profile" />
+              <img style={{ width: 250 }} src={Admin} alt="profile" />
             </div>
           </div>
           <div
@@ -103,6 +100,7 @@ class UserProfile extends Component {
               fontWeight: "bolder",
               fontSize: 20,
               fontFamily: "cursive",
+              color: "#000",
             }}
           >
             <div style={{ fontSize: 34, fontFamily: "monospace" }}>

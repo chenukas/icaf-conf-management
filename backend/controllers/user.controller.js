@@ -32,6 +32,12 @@ const userRegister = (req, res) => {
       message: "Contact Number can not be blank.",
     });
   }
+  if (!type) {
+    return res.send({
+      success: false,
+      message: "User Type can not be blank.",
+    });
+  }
   if (!password) {
     return res.send({
       success: false,

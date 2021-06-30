@@ -44,3 +44,14 @@
 .add-event-form-row {
     margin: 20px;
 }
+
+.form-select-option{
+  color: black !important;
+}
+
+.submit-button {
+  width: 150px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

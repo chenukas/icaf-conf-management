@@ -33,6 +33,8 @@ const approvePublication = (id) => {
 })
 }
 
+
+console.log(publications)
   return (
       <div className="publications-container">
         <h2 className="publications-header" >Manage Publications</h2>
