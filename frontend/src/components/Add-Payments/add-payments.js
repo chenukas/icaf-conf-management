@@ -70,7 +70,15 @@ class AddPayments extends Component {
     axios
       .post("http://localhost:5000/payments", payment)
       .then((res) => {
-        alert("New Payment Is Done Successfully");
+        if (res.data.success === true) {
+          swal({
+            title: "New Payment is Successfull!",
+            text: res.data.message,
+            icon: "success",
+            button: true,
+            dangerMode: false,
+          });
+        }
       })
       .catch((error) => {
         console.log(error.message);
