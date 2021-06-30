@@ -46,8 +46,10 @@ class Login extends Component {
         });
         const id = res.data.user._id;
         const name = res.data.user.fullName;
+        const position = res.data.user.position;
         localStorage.setItem("logUserId", id);
         localStorage.setItem("logUserName", name);
+        localStorage.setItem("logUserPosition", position);
         if (res.data.user.position == 1) {
           window.location = "/dashboard";
         } else {
@@ -70,14 +72,22 @@ class Login extends Component {
     return (
       <div
         className="container"
-        style={{ width: "30%", margin: auto, marginTop: "5%", backgroundColor: "#01bf71" }}
+        style={{
+          width: "30%",
+          margin: auto,
+          marginTop: "5%",
+          backgroundColor: "#01bf71",
+        }}
       >
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
           style={{ backgroundColor: "#01bf71" }}
         >
-          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
+          <div
+            className="form-group"
+            style={{ marginTop: "5%", color: "#000" }}
+          >
             <label>User Email: </label>
             <input
               type="email"
@@ -86,7 +96,10 @@ class Login extends Component {
               onChange={this.onChangeEmail}
             />
           </div>
-          <div className="form-group" style={{ marginTop: "5%", color: "#000"}}>
+          <div
+            className="form-group"
+            style={{ marginTop: "5%", color: "#000" }}
+          >
             <label>Password: </label>
             <input
               type="password"
@@ -96,7 +109,7 @@ class Login extends Component {
             />
           </div>
 
-          <div className="form-group" style={{ marginTop: "5%"}}>
+          <div className="form-group" style={{ marginTop: "5%" }}>
             <input
               type="submit"
               value="Sign in"
@@ -110,9 +123,9 @@ class Login extends Component {
             />
           </div>
           <div>
-            <div className="row" style={{marginTop: "5%"}}>
+            <div className="row" style={{ marginTop: "5%" }}>
               <div className="col-6">
-                <p style={{color: "#000"}}>Don't have an account?</p>
+                <p style={{ color: "#000" }}>Don't have an account?</p>
               </div>
               <div className="col-6">
                 <Link
