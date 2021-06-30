@@ -2,6 +2,7 @@ const Payment = require("../models/payment.model");
 const mongoose = require("mongoose");
 
 const addPayment = (req, res) => {
+  console.log(req.body);
   if (!req.body.type) {
     return res.status(400).json({
       success: false,
@@ -46,6 +47,7 @@ const addPayment = (req, res) => {
 //View payment of particular member
 const viewPaymentById = (req, res) => {
   Payment.findById(req.params.id)
+    .populate("userId")
     .then((result) => {
       res.status(200).json({
         success: true,
@@ -63,7 +65,7 @@ const viewPaymentById = (req, res) => {
 //View all the payments
 const viewAllPayments = (req, res) => {
   Payment.find({})
-    .populate("User", "fullName type")
+    .populate("userId")
     .then((result) => {
       res.status(200).json({
         success: true,
