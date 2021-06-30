@@ -1,8 +1,7 @@
-const { expect } = require("chai");
-const chai = require("chai");
-const chaiHttp = require("chai-http");
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 const should = chai.should();
-const server = require("../../../index");
+const server = require('../../../index');
 
 chai.use(chaiHttp);
 
@@ -17,12 +16,11 @@ describe("POST /payments", () => {
         name: "Chamodi Thennakoon",
         payDate: 2021 - 07 - 09,
         amount: 3000,
-      })
-      .expect(200)
-      .then((res) => {
+      }).end((err , res) => {
         res.should.have.status(200);
-        res.body.should.have.property("success").eql(true);
+        res.body.should.have.property('success').eql(true);
+        res.body.should.have.property('data').not.eql(null);
         done();
-      });
+    });
   });
 });
