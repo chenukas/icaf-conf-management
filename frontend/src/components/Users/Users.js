@@ -82,13 +82,11 @@ class Users extends Component {
                         <div
                           onClick={(e) => this.navigateEditPage(e, item._id)}
                         >
-                          <Link>
                             <img
-                              style={{ width: 25 }}
+                              style={{ width: 25, cursor: 'pointer' }}
                               src={Edit}
                               alt="profile"
                             />
-                          </Link>
                         </div>
                       )}
                     </td>
