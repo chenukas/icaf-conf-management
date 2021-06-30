@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./add-payment.css";
-import swal from "sweetalert";
 
 const initialState = {
   type: "",

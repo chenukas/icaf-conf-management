@@ -40,7 +40,7 @@ const Event = () => {
             </div>
             <h2 className="header">{ event.name }</h2>
             <div className="row">
-                <div className="col-md-8"><img className="event-image" src="https://image.freepik.com/free-vector/app-development-illustration_52683-47931.jpg" /></div>
+                <div className="col-md-8"><img className="event-image" src="https://image.freepik.com/free-vector/app-development-illustration_52683-47931.jpg" alt="events" /></div>
                 <div className="col-md-4">
                     <div>
                         <label className="event-label">Date</label><br/><p className="event-details">{moment(event.start).format("MMM Do YYYY")}</p>
