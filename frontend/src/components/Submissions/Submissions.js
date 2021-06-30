@@ -43,6 +43,10 @@ const Submissions = () => {
                                 <p>
                                     <a href={s.fileURL} className="btn btn-outline-dark mt-3" target="_blank">Download PDF</a>
                                 </p>
+
+                                {/* <p>
+                                    <a href={s.fileURL} className="btn btn-outline-dark mt-3" style={{background:"#464646", alignContent:"right"}} target="_blank">Download PDF</a>
+                                </p> */}
                             </div>
                         )
                     }
