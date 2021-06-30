@@ -16,7 +16,7 @@ const AddSubmission = () => {
   const createSubmission = () => console.log(title, abstract, authors);
 
   return (
-    <div className="container" style={{marginTop: '20px'}}>
+    <div className="containersub" style={{marginTop: '20px'}}>
       <form >
         <div className="row">
           <h4>Add new Submission</h4>
