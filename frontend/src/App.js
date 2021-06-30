@@ -16,6 +16,7 @@ import AddPayments from "./components/Add-Payments/add-payments";
 import Download from "./components/Downloads/Download";
 import Submissions from "./components/Submissions/Submissions";
 import AddSubmission from "./components/AddSubmission/AddSubmission";
+import Event from './pages/Event/Event'
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <Route path="/download" component={Download} exact={true} />
         <Route path="/submission" component={Submissions} exact={true} />
         <Route path="/addsubmission" component={AddSubmission} exact={true} />
-      
+        <Route path="/event" component={Event} exact={true} />
       </Switch>
     </>
   );

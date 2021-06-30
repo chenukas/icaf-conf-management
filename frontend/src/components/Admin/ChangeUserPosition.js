@@ -82,7 +82,7 @@ class ChangeUserPosition extends Component {
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
-          style={{ backgroundColor: "#fff", marginLeft: "7.5%" }}
+          style={{ marginLeft: "7.5%" }}
         >
           <div
             className="form-group"

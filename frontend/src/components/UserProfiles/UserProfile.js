@@ -115,9 +115,6 @@ class UserProfile extends Component {
             <div>
               <label>{this.state.typeName}</label>
             </div>
-            <div>
-              <label>{this.state.positionName}</label>
-            </div>
           </div>
         </div>
         <div className="mt-5">{button}</div>

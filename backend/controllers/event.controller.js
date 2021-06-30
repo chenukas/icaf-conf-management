@@ -92,6 +92,20 @@ const getEvents = (req, res) => {
     });
 };
 
+const getEventById = (req, res) => {
+  Event.findById(req.params.id).then(result => {
+    res.status(200).json({
+        success: true,
+        data: result
+    });
+}).catch(err => {
+    res.status(502).json({
+        success: false,
+        message: err.message
+    });
+});
+}
+
 const deleteEventById = (req, res) => {
   Event.findByIdAndDelete(req.params.id).then(() => {
     res.status(200).json({
@@ -108,5 +122,6 @@ const deleteEventById = (req, res) => {
 module.exports = {
   addEvent,
   getEvents,
-  deleteEventById
+  deleteEventById,
+  getEventById
 };

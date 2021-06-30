@@ -5,6 +5,7 @@ import "./add-payment.css";
 const initialState = {
   type: "",
   userId: "",
+  name: "",
   payDate: "",
   amount: 0.0,
   fullName: "",
@@ -62,6 +63,7 @@ class AddPayments extends Component {
     let payment = {
       type: this.state.type,
       userId: this.state.userId,
+      name: this.state.fullName,
       payDate: this.state.payDate,
       amount: this.state.amount,
     };
@@ -95,7 +97,7 @@ class AddPayments extends Component {
             </div>
             <div className="mb-3">
               <label htmlFor="userId" className="form-label">
-                User Full Name
+                Full Name
               </label>
               <input
                 type="text"
@@ -130,6 +132,7 @@ class AddPayments extends Component {
                 onChange={this.onChange}
               />
             </div>
+
             <button type="submit" className="btn">
               Checkout
             </button>
