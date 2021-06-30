@@ -17,7 +17,7 @@ const AddSubmission = () => {
           </div>
           <div className="input-group input-group-icon">
             <textarea
-              class="form-control"
+              className="form-control"
               placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Authors"
               aria-label="With textarea"
             ></textarea>
@@ -25,7 +25,7 @@ const AddSubmission = () => {
           </div>
         </div>
         <div className="mb-3">
-          <label for="formFile" className="form-label">
+          <label htmlFor="formFile" className="form-label">
             Choose a research paper
           </label>
           <input className="form-control" type="file" id="formFile" />

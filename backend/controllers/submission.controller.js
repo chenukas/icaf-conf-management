@@ -65,6 +65,7 @@ const addSubmission = (req, res) => {
  */
 const getSubmissions = (req, res) => {
     Submission.find({})
+    .populate('uid')
         .then((result) => {
             res.status(200).json({
                 success: true,
