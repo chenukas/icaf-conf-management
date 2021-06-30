@@ -47,7 +47,7 @@ const userRegister = (req, res) => {
   if (password !== confirmPassword) {
     return res.send({
       success: false,
-      message: "Password is not matching",
+      message: "Password and Confirm Password are not matching",
     });
   }
 
