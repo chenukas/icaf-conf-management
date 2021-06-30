@@ -26,6 +26,10 @@ const Timeline = () => {
   }, []);
 
   console.log(events);
+  const openEvent = (id) => {
+    localStorage.setItem('selectedEvent', id)
+    window.location = '/event'
+  }
 
   return (
     <div className="timeline-container">
@@ -39,6 +43,7 @@ const Timeline = () => {
               icon={<FaClock />}
               iconStyle={{ color: "#fff", backgroundColor: "#01bf71" }}
               key={key}
+              onTimelineElementClick={() => openEvent(event._id)}
             >
               <h3 className="vertical-timeline-element-title">{event.name}</h3>
               <h4 className="vertical-timeline-element-subtitle">

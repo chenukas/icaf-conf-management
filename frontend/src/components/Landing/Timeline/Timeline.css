@@ -15,3 +15,7 @@
   color: #a1a1a1;
   font-size: medium;
 }
+
+.vertical-timeline-element--work {
+  cursor: pointer;
+}
