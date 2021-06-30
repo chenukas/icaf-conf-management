@@ -22,7 +22,15 @@ const deleteSubmissionRecord = id => {
     return Submission.findByIdAndDelete(id);
 }
 
+/**
+ * Get submissions by UID
+ * @param {ObjectID} uid uid of user
+ * @returns 
+ */
+const getSubmissionsByUID = uid => Submission.find({uid});
+
 module.exports = {
     createSubmissionRecord,
-    deleteSubmissionRecord
+    deleteSubmissionRecord,
+    getSubmissionsByUID
 }

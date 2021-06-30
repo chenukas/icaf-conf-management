@@ -1,0 +1,46 @@
+.event-container {
+    width: 80%;
+    margin: auto;
+    background-color: #ccedd5;
+    height: 100vh;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.header {
+    color: #01bf71;
+    margin-bottom: 20px;
+}
+
+.clear-icon {
+    color: black;
+    float: right;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .event-image {
+        width: 300px;
+        height: auto;
+    }
+}
+
+.event-description {
+    padding-top: 20px;
+    color: black;
+    font-size: medium;
+}
+
+.event-label {
+    font-size: medium;
+    color: #01bf71;
+    font-weight: bold;
+}
+
+.event-details {
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+}

@@ -9,11 +9,11 @@ const Home = () => {
   return (
     <>
       <div className="container-fluid" style={{ padding: "0px" }}>
-        <Hero />
-        <AboutUs />
-        <Speakers />
-        <Timeline />
-        <Footer />
+        <Hero/>
+        <AboutUs/>
+        <Speakers/>
+        <Timeline/>
+        <Footer/>
       </div>
     </>
   );
