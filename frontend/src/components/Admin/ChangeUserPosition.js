@@ -82,9 +82,12 @@ class ChangeUserPosition extends Component {
         <form
           onSubmit={this.onSubmit}
           className="jumbotron"
-          style={{ backgroundColor: "#fff", marginLeft: "5%" }}
+          style={{ backgroundColor: "#fff", marginLeft: "7.5%" }}
         >
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ marginTop: "2%", color: "#000" }}
+          >
             <label>Full Name: </label>
             <input
               type="text"
@@ -94,7 +97,10 @@ class ChangeUserPosition extends Component {
               readOnly
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ marginTop: "2%", color: "#000" }}
+          >
             <label>Email: </label>
             <input
               type="email"
@@ -104,7 +110,10 @@ class ChangeUserPosition extends Component {
               readOnly
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ marginTop: "2%", color: "#000" }}
+          >
             <label>Contact Number: </label>
             <input
               type="text"
@@ -114,7 +123,10 @@ class ChangeUserPosition extends Component {
               readOnly
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ marginTop: "2%", color: "#000" }}
+          >
             <label>User Position: </label>
             <input
               type="text"
@@ -134,7 +146,7 @@ class ChangeUserPosition extends Component {
               </PopoverBody>
             </UncontrolledPopover>
           </div>
-          <div className="row">
+          <div className="row" style={{ marginTop: "2%" }}>
             <div className="col-12">
               <div className="form-group">
                 <input
