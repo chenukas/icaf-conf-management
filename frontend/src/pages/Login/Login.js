@@ -47,9 +47,11 @@ class Login extends Component {
         const id = res.data.user._id;
         const name = res.data.user.fullName;
         const position = res.data.user.position;
+        const type = res.data.user.type;
         localStorage.setItem("logUserId", id);
         localStorage.setItem("logUserName", name);
         localStorage.setItem("logUserPosition", position);
+        localStorage.setItem("logUserType", type);
         if (res.data.user.position == 1) {
           window.location = "/dashboard";
         } else {

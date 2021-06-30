@@ -1,0 +1,63 @@
+.fcontainer-fluid {
+    margin-top: 101px;
+    color: rgb(255, 255, 255) !important
+}
+
+.fcard {
+    background-color: #F8F9FB !important
+}
+
+.fp {
+    font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+    display: fkex
+}
+
+.fh3 {
+    font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.fcolor-text {
+    color: #757575 !important
+}
+
+.fbutton {
+    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
+    background-color: #01bf71 !important;
+    padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.fbutton:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.ffooter {
+    color: #caced1 !important
+}
+
+.fli {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.Careers {
+    cursor: pointer;
+    color: #01bf71
+}
+
+.frow-1 {
+    background-color: #131313 !important
+}
+
+.frow-2 {
+    background-color: #000000 !important
+}

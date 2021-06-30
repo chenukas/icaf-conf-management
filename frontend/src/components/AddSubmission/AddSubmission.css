@@ -8,7 +8,7 @@ body {
     /* padding: 1em; */
     /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     font-size: 15px;
-    color: #b9b9b9;
+    color: #776868;
     background-color: #e3e3e3;
   }
   h4 {
@@ -212,4 +212,18 @@ body {
       padding-right: 0;
     }
   }
-  
+
+
+.abstract {
+  height: 20vh;
+}
+
+.author-badge {
+  background: black;
+  width: fit-content;
+  padding: 3px 5px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
