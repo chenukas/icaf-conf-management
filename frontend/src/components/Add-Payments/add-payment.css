@@ -1,18 +1,19 @@
 .payment-container {
-    width: 500px;
-    padding-left: 1em;
-    padding-bottom: 6em;
-  }
-  
-  .title {
-    color: #01bf71;
-    padding-left: 0.5em;
-  }
-  
-  .btn {
-    background-color: #01bf71;
-    border-radius: 00.2em;
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
+  width: 1000px;
+  padding-left: 20em;
+  padding-bottom: 6em;
+}
+
+.title {
+  color: #01bf71;
+  padding-left: 0.5em;
+  padding-top: 1em;
+}
+
+.btn {
+  background-color: #01bf71;
+  border-radius: 00.2em;
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 1em;
+}
