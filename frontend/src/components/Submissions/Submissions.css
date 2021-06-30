@@ -4,3 +4,7 @@
     border-bottom: #caced1 1px solid;
     padding-bottom: 1rem;
 }
+
+.delete{
+    float: right;
+}

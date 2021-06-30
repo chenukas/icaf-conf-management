@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 import "./Submissions.css";
 
@@ -22,6 +23,28 @@ const Submissions = () => {
             });
     }
 
+    const onDeleteSub = (id) => {
+      console.log(id)
+      debugger
+      axios({
+          method: 'DELETE',
+          url: `http://localhost:5000/submissions/${id}`
+      }).then(response => {
+        // show alert
+        Swal.fire(
+            'Successful!',
+            'Deleted submission successfully!',
+            'success'
+        )
+    }).catch(err => {
+        Swal.fire(
+            'Oopz!',
+            (err.error && err.error.message) || 'Could not delete submission',
+            'danger'
+        );
+    });
+  }
+
     return (
         <div className="container mt-5">
             <Link to="/addsubmission" style={{textDecoration: 'none'}}>
@@ -40,13 +63,18 @@ const Submissions = () => {
                                         return <span className="author-badge">{a}</span>
                                     })
                                 }
+                                <div className="row">
+                                  <div className="col">
                                 <p>
                                     <a href={s.fileURL} className="btn btn-outline-dark mt-3" target="_blank">Download PDF</a>
                                 </p>
-
-                                {/* <p>
-                                    <a href={s.fileURL} className="btn btn-outline-dark mt-3" style={{background:"#464646", alignContent:"right"}} target="_blank">Download PDF</a>
-                                </p> */}
+                                </div>
+                                <div className="col">
+                                <p className="delete">
+                                    <a className="btn btn-outline-dark mt-3" onClick={() => onDeleteSub(s._id)} style={{background:"#464646"}} target="_blank">Delete</a>
+                                </p>
+                                </div>
+                                </div>
                             </div>
                         )
                     }
