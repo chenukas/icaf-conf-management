@@ -39,7 +39,7 @@ class Payments extends Component {
               {this.state.payments.length > 0 &&
                 this.state.payments.map((item, index) => (
                   <tr>
-                    <td>{item.userId}</td>
+                    <td>{item.userId.fullName}</td>
                     <td>{item.type}</td>
                     <td>{item.amount}</td>
                   </tr>
