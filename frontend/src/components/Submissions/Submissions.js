@@ -33,12 +33,12 @@ const Submissions = () => {
     })
       .then((response) => {
         // show alert
-        Swal.fire("Successful!", "Deleted submission successfully!", "success");
+        Swal.fire("Successful!", "Deleted file successfully!", "success");
       })
       .catch((err) => {
         Swal.fire(
           "Oopz!",
-          (err.error && err.error.message) || "Could not delete submission",
+          (err.error && err.error.message) || "Could not delete file",
           "danger"
         );
       });
@@ -96,9 +96,9 @@ const Submissions = () => {
                   <div className="col">
                     <p className="delete">
                       <a
-                        className="btn btn-outline-dark mt-3"
+                        className="btn btn-outline-dark mt-3 delbtn"
                         onClick={() => onDeleteSub(s._id)}
-                        style={{ background: "#464646" }}
+                        // style={{ background: "#464646" }}
                         target="_blank"
                       >
                         Delete
