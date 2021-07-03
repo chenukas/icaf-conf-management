@@ -9,6 +9,14 @@
     float: right;
 }
 
+.delbtn{
+    background: #464646;
+}
+
+.delbtn:hover{
+    background: #c40000;
+}
+
 .stateSub{
     color: #01bf70c4;
 }
