@@ -1,4 +1,4 @@
-# frameCon2021
+# ICAF 2021
 
 > Install dependencies
 
